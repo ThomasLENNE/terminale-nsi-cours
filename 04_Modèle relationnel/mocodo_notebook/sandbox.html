@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+  #mld .relation { font-variant: small-caps; font-weight: bold }
+  #mld .primary { text-decoration: underline }
+  #mld .foreign { font-style: oblique }
+  #mld .normal { }
+</style>
+</head>
+<body>
+<div id='mld'>
+<div>
+  <span class='relation'>ACTIVITE</span> (
+    <span class='primary'>nom_activite</span>,
+    <span class='normal'>theme</span>,
+    <span class='normal'>description</span>,
+    <span class='normal'>salle</span>,
+    <span class='normal'>date</span>,
+    <span class='normal'>heure</span>,
+    <span class='foreign'>ref_intervenant</span>
+  )
+</div>
+<div>
+  <span class='relation'>ECOLIER</span> (
+    <span class='primary'>id_ecolier</span>,
+    <span class='normal'>nom_ecolier</span>,
+    <span class='normal'>prenom_ecolier</span>,
+    <span class='normal'>age</span>,
+    <span class='normal'>classe</span>
+  )
+</div>
+<div>
+  <span class='relation'>PARTICIPE</span> (
+    <span class='foreign primary'>id_ecolier</span>,
+    <span class='foreign primary'>nom_activite</span>
+  )
+</div>
+<div>
+  <span class='relation'>INTERVENANT</span> (
+    <span class='primary'>ref_intervenant</span>,
+    <span class='normal'>nom_intervenant</span>,
+    <span class='normal'>prenom_intervenant</span>,
+    <span class='normal'>email</span>
+  )
+</div>
+</div>
+</body>
+</html>

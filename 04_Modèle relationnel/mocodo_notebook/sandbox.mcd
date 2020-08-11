@@ -1,0 +1,6 @@
+ACTIVITE: nom_activite,theme,description,salle, date, heure
+ENCADRE,11 ACTIVITE,0N INTERVENANT
+
+ECOLIER: id_ecolier,nom_ecolier,prenom_ecolier,age,classe
+PARTICIPE, 0N ECOLIER, 0N ACTIVITE
+INTERVENANT: ref_intervenant,nom_intervenant,prenom_intervenant,email

@@ -1,0 +1,87 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="416" height="309" view_box="0 0 416 309"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.8 le Mon, 10 Aug 2020 17:24:01</desc>
+
+<rect id="frame" x="0" y="0" width="416" height="309" fill="none" stroke="none" stroke-width="0"/>
+
+<!-- Association ENCADRE -->
+<line x1="65" y1="80" x2="193" y2="80" stroke="#000000" stroke-width="1"/>
+<text x="118" y="72.0" fill="#000000" font-family="Verdana" font-size="12">1,1</text>
+<line x1="336" y1="238" x2="193" y2="80" stroke="#000000" stroke-width="1"/>
+<text x="286.4583620256039" y="177" fill="#000000" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-ENCADRE">
+	<path d="M 216 54 a 14 14 90 0 1 14 14 V 80 h -74 V 68 a 14 14 90 0 1 14 -14" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+	<path d="M 230 80.0 v 12 a 14 14 90 0 1 -14 14 H 170 a 14 14 90 0 1 -14 -14 V 80.0 H 74" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+	<rect x="156" y="54" width="74" height="52" fill="none" rx="14" stroke="#000000" stroke-width="1.5"/>
+	<line x1="156" y1="80" x2="230" y2="80" stroke="#000000" stroke-width="1"/>
+	<text x="163" y="72.6" fill="#000000" font-family="Trebuchet MS" font-size="14">ENCADRE</text>
+</g>
+
+<!-- Association PARTICIPE -->
+<line x1="65" y1="238" x2="193" y2="238" stroke="#000000" stroke-width="1"/>
+<text x="126" y="255.0" fill="#000000" font-family="Verdana" font-size="12">0,N</text>
+<line x1="65" y1="80" x2="193" y2="238" stroke="#000000" stroke-width="1"/>
+<text x="118" y="137.27778256146243" fill="#000000" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-PARTICIPE">
+	<path d="M 219 212 a 14 14 90 0 1 14 14 V 238 h -80 V 226 a 14 14 90 0 1 14 -14" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+	<path d="M 233 238.0 v 12 a 14 14 90 0 1 -14 14 H 167 a 14 14 90 0 1 -14 -14 V 238.0 H 80" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+	<rect x="153" y="212" width="80" height="52" fill="none" rx="14" stroke="#000000" stroke-width="1.5"/>
+	<line x1="153" y1="238" x2="233" y2="238" stroke="#000000" stroke-width="1"/>
+	<text x="160" y="230.6" fill="#000000" font-family="Trebuchet MS" font-size="14">PARTICIPE</text>
+</g>
+
+<!-- Entity ACTIVITE -->
+<g id="entity-ACTIVITE">
+	<g id="frame-ACTIVITE">
+		<rect x="17" y="9" width="96" height="26" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+		<rect x="17" y="35.0" width="96" height="116" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+		<rect x="17" y="9" width="96" height="142" fill="none" stroke="#000000" stroke-width="1.5"/>
+		<line x1="17" y1="35" x2="113" y2="35" stroke="#000000" stroke-width="1"/>
+	</g>
+	<text x="35" y="27.6" fill="#000000" font-family="Trebuchet MS" font-size="14">ACTIVITE</text>
+	<text x="22" y="53.6" fill="#000000" font-family="Trebuchet MS" font-size="14">nom_activite</text>
+	<line x1="22" y1="56.0" x2="107" y2="56.0" stroke="#000000" stroke-width="1"/>
+	<text x="22" y="71.6" fill="#000000" font-family="Trebuchet MS" font-size="14">theme</text>
+	<text x="22" y="89.6" fill="#000000" font-family="Trebuchet MS" font-size="14">description</text>
+	<text x="22" y="107.6" fill="#000000" font-family="Trebuchet MS" font-size="14">salle</text>
+	<text x="22" y="125.6" fill="#000000" font-family="Trebuchet MS" font-size="14">date</text>
+	<text x="22" y="143.6" fill="#000000" font-family="Trebuchet MS" font-size="14">heure</text>
+</g>
+
+<!-- Entity ECOLIER -->
+<g id="entity-ECOLIER">
+	<g id="frame-ECOLIER">
+		<rect x="9" y="176" width="112" height="26" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+		<rect x="9" y="202.0" width="112" height="98" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+		<rect x="9" y="176" width="112" height="124" fill="none" stroke="#000000" stroke-width="1.5"/>
+		<line x1="9" y1="202" x2="121" y2="202" stroke="#000000" stroke-width="1"/>
+	</g>
+	<text x="38" y="194.6" fill="#000000" font-family="Trebuchet MS" font-size="14">ECOLIER</text>
+	<text x="14" y="220.6" fill="#000000" font-family="Trebuchet MS" font-size="14">id_ecolier</text>
+	<line x1="14" y1="223.0" x2="79" y2="223.0" stroke="#000000" stroke-width="1"/>
+	<text x="14" y="238.6" fill="#000000" font-family="Trebuchet MS" font-size="14">nom_ecolier</text>
+	<text x="14" y="256.6" fill="#000000" font-family="Trebuchet MS" font-size="14">prenom_ecolier</text>
+	<text x="14" y="274.6" fill="#000000" font-family="Trebuchet MS" font-size="14">age</text>
+	<text x="14" y="292.6" fill="#000000" font-family="Trebuchet MS" font-size="14">classe</text>
+</g>
+
+<!-- Entity INTERVENANT -->
+<g id="entity-INTERVENANT">
+	<g id="frame-INTERVENANT">
+		<rect x="265" y="185" width="142" height="26" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+		<rect x="265" y="211.0" width="142" height="80" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0"/>
+		<rect x="265" y="185" width="142" height="106" fill="none" stroke="#000000" stroke-width="1.5"/>
+		<line x1="265" y1="211" x2="407" y2="211" stroke="#000000" stroke-width="1"/>
+	</g>
+	<text x="291" y="203.6" fill="#000000" font-family="Trebuchet MS" font-size="14">INTERVENANT</text>
+	<text x="270" y="229.6" fill="#000000" font-family="Trebuchet MS" font-size="14">ref_intervenant</text>
+	<line x1="270" y1="232.0" x2="372" y2="232.0" stroke="#000000" stroke-width="1"/>
+	<text x="270" y="247.6" fill="#000000" font-family="Trebuchet MS" font-size="14">nom_intervenant</text>
+	<text x="270" y="265.6" fill="#000000" font-family="Trebuchet MS" font-size="14">prenom_intervenant</text>
+	<text x="270" y="283.6" fill="#000000" font-family="Trebuchet MS" font-size="14">email</text>
+</g>
+</svg>
