@@ -1,4 +1,0 @@
-ACTIVITE (_nom_activite_, theme, description, salle, date, heure, #ref_intervenant)
-ECOLIER (_id_ecolier_, nom_ecolier, prenom_ecolier, age, classe)
-PARTICIPE (_#id_ecolier_, _#nom_activite_)
-INTERVENANT (_ref_intervenant_, nom_intervenant, prenom_intervenant, email)
