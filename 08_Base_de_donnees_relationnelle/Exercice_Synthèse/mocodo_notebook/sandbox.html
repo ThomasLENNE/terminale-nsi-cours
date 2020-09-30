@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+  #mld .relation { font-variant: small-caps; font-weight: bold }
+  #mld .primary { text-decoration: underline }
+  #mld .foreign { font-style: oblique }
+  #mld .normal { }
+</style>
+</head>
+<body>
+<div id='mld'>
+<div>
+  <span class='relation'>MENU</span> (
+    <span class='primary'>ref_menu</span>,
+    <span class='normal'>nom_menu</span>,
+    <span class='normal'>date_menu</span>
+  )
+</div>
+<div>
+  <span class='relation'>COMPOSER</span> (
+    <span class='foreign primary'>ref_menu</span>,
+    <span class='foreign primary'>ref_plat</span>
+  )
+</div>
+<div>
+  <span class='relation'>PLAT</span> (
+    <span class='primary'>ref_plat</span>,
+    <span class='normal'>nom_plat</span>,
+    <span class='normal'>prix_plat</span>
+  )
+</div>
+<div>
+  <span class='relation'>ENFANT</span> (
+    <span class='primary'>ref_enfant</span>,
+    <span class='normal'>nom_enfant</span>,
+    <span class='normal'>prenom_enfant</span>,
+    <span class='normal'>sexe_enfant</span>,
+    <span class='foreign'>ref_plat</span>
+  )
+</div>
+</div>
+</body>
+</html>

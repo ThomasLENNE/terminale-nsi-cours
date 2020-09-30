@@ -1,0 +1,4 @@
+MENU (_ref_menu_, nom_menu, date_menu)
+COMPOSER (_#ref_menu_, _#ref_plat_)
+PLAT (_ref_plat_, nom_plat, prix_plat)
+ENFANT (_ref_enfant_, nom_enfant, prenom_enfant, sexe_enfant, #ref_plat)

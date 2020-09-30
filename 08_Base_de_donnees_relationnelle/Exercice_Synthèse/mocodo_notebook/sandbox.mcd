@@ -1,0 +1,5 @@
+MENU : ref_menu, nom_menu, date_menu
+COMPOSER, 33 MENU, 0N PLAT
+PLAT : ref_plat, nom_plat, prix_plat
+PREFERER, 0N PLAT, 11 ENFANT
+ENFANT: ref_enfant, nom_enfant, prenom_enfant, sexe_enfant
