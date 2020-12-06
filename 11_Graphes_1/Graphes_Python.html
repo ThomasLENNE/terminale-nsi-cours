@@ -13088,8 +13088,8 @@ div#notebook {
 <li>Il existe de multiples façons de représenter un graphe en machine, selon la nature du graphe ou des opérations et des algorithmes à effectuer sur ce graphe.</li>
 </ul>
 <ul>
-<li>Quoi qu'il en soit, on implémetera :<ul>
-<li>Des opérations de constructions (création d'un graphe  vide, ajout de sommet, ajout d'arcs, ...)</li>
+<li>Quoi qu'il en soit, on implémentera :<ul>
+<li>Des opérations de constructions (création d'un graphe  vide, ajout de sommets, ajout d'arcs, ...)</li>
 <li>Des opérations de parcours de graphe (par les sommets, par les arcs,...)</li>
 </ul>
 </li>
@@ -13357,7 +13357,7 @@ $\begin{pmatrix} 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 1  \\ 0 &a
 <h3 id="Efficacit&#233;">Efficacit&#233;<a class="anchor-link" href="#Efficacit&#233;">&#182;</a></h3><p>La matrice d'adjacence est simple à mettre en oeuvre, puis à utiliser pour parcourir les sommets ou les arcs d'un graphe. Mais elle comporte quelques défauts :</p>
 <ul>
 <li>L'espace mémoire est important, puisque pour $N$ sommets, il faut $N \times N$ éléments dans la matrice. Ainsi, un graphe de mille sommets (un réseau social  en comporte des centaines de millions) nécéssite une matrice avec 1 million d'éléments, même s'il n'y a pas beaucoup d'arcs.</li>
-<li>Le nombre de sommets doit être connu à la création du graphe. L'ajout postérieur d'un sommet nécéssite de réécire la matrice, ce qui est coûteux en temps.</li>
+<li>Le nombre de sommets doit être connu à la création du graphe. L'ajout postérieur d'un sommet nécéssite de réécrire la matrice, ce qui est coûteux en temps.</li>
 <li>Les sommets sont forcément des entiers.</li>
 <li>Nous allons voir par la suite une représentation plus optimale, à l'aide d'un dictionnaire.</li>
 </ul>
@@ -13376,7 +13376,7 @@ $\begin{pmatrix} 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 1  \\ 0 &a
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>Les dictionnaires  ressemblent aux listes python( ils sont modifiables comme elles), mais ce ne sont pas des séquences.Les éléments enregistrés ne sont pas disposés dans un ordre immuable. Il est néanmoins possible d'accéder à n’importe lequel d’entre eux à l’aide d’un index que l’on appellera une clé, laquelle pourra être alphabétique ou numérique.</p>
+<li><p>Les dictionnaires  ressemblent aux listes python( ils sont modifiables comme elles), mais ce ne sont pas des séquences. Les éléments enregistrés ne sont pas disposés dans un ordre immuable. Il est néanmoins possible d'accéder à n’importe lequel d’entre eux à l’aide d’un index que l’on appellera une clé, laquelle pourra être alphabétique ou numérique.</p>
 </li>
 <li><p>Comme dans une liste, les éléments mémorisés dans un dictionnaire peuvent être de n’importe quel type( valeurs numériques, chaînes, listes ou encore des dictionnaires, et même aussi des fonctions).
 ##### Exemple :</p>
@@ -13628,7 +13628,7 @@ D [&#39;B&#39;]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-5-:">Exercice 5 :<a class="anchor-link" href="#Exercice-5-:">&#182;</a></h5><p>Ahouter la méthode <code>arc(self, s1,s2)</code> qui renvoie <code>True</code> si l'arc de <code>s2</code> vers <code>s1</code> existe , et <code>False</code> sinon.</p>
+<h5 id="Exercice-5-:">Exercice 5 :<a class="anchor-link" href="#Exercice-5-:">&#182;</a></h5><p>Ajouter la méthode <code>arc(self, s1,s2)</code> qui renvoie <code>True</code> si l'arc de <code>s2</code> vers <code>s1</code> existe , et <code>False</code> sinon.</p>
 
 </div>
 </div>
@@ -13688,9 +13688,9 @@ D [&#39;B&#39;]
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Remarques">Remarques<a class="anchor-link" href="#Remarques">&#182;</a></h3><ul>
-<li>Il existe de multiples façons d'implémenter des graphes, en particulier utiliser unr liste d'adjacence, plutôt qu'un dictionnaire.</li>
+<li>Il existe de multiples façons d'implémenter des graphes, en particulier utiliser une liste d'adjacence, plutôt qu'un dictionnaire.</li>
 <li>On choisit l'implémentation en fonction de la situation à modéliser.</li>
-<li>Ce qui est important , c'est de pouvoir accéder d'une façon ou d'une autre à tous les sommets du graphe et leirs voisins.</li>
+<li>Ce qui est important , c'est de pouvoir accéder d'une façon ou d'une autre à tous les sommets du graphe et leurs voisins.</li>
 </ul>
 
 </div>
