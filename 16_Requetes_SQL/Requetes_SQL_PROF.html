@@ -13413,7 +13413,7 @@ JOIN PRODUIT ON DETAIL.refProd=PRODUIT.refProd;</code></li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Mise-&#224;-jour-d'attributs-(UPDATE...SET...)">Mise &#224; jour d'attributs (UPDATE...SET...)<a class="anchor-link" href="#Mise-&#224;-jour-d'attributs-(UPDATE...SET...)">&#182;</a></h3><ul>
-<li><p>##### Exemple 13:</p>
+<li><p>##### Exemple 15:</p>
 <ul>
 <li><strong>Demande :</strong> Le prix du sucre a augmenté de 10% et s'appelle désormais "Sucre bio". Mettre à jour la base de données.</li>
 <li><strong>Ordre SQL:</strong> 
@@ -13467,7 +13467,7 @@ JOIN PRODUIT ON DETAIL.refProd=PRODUIT.refProd;</code></li>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Le  résultat d'une clause <code>SELECT</code> est une table. On peut donc effectuer des requêtes sur cette nouvelle table !</p>
 <ul>
-<li>##### Exemple 14:<ul>
+<li>##### Exemple 16:<ul>
 <li><strong>Demande :</strong> Le nom du produit dont le prix unitaire est le plus cher.</li>
 <li><strong>Ordre SQL:</strong> 
 <code>SELECT nomProd,puProd from PRODUIT WHERE puProd=( SELECT MAX(puProd) from PRODUIT);</code></li>
