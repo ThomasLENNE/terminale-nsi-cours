@@ -13265,8 +13265,8 @@ Indice de  41325  :
 <ul>
 <li>Si <code>g</code> est supérieur à <code>d</code>, c'est que la valeur <code>v</code> ne se trouve pas dans le tableau, on renvoie <code>False</code></li>
 <li>On calcule l'indice médian <code>m</code>entre <code>g</code> et <code>d</code> comme dans la précédente version.</li>
-<li>Si la valeur du tableau à cet index est strictement inférieure à <code>v</code>, alors on relance récursivament une recherche dans la moitié droite délimité par les indices <code>g</code> et <code>m-1</code>.</li>
-<li>Si la valeur du tableau à cet index est strictement supérieure à <code>v</code>, alors on relance récursivament une recherche dans la moitié gauche délimité par les indices <code>m+1</code> et <code>d</code>.</li>
+<li>Si la valeur du tableau à cet index est strictement inférieure à <code>v</code>, alors on relance récursivament une recherche dans la moitié gauche délimité par les indices <code>g</code> et <code>m-1</code>.</li>
+<li>Si la valeur du tableau à cet index est strictement supérieure à <code>v</code>, alors on relance récursivament une recherche dans la moitié droite délimité par les indices <code>m+1</code> et <code>d</code>.</li>
 <li>Sinon c'est que l'on a trouvé la valeur <code>v</code>, on renvoie son indice <code>m</code></li>
 </ul>
 
@@ -13303,7 +13303,7 @@ Indice de  41325  :
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#On choisit une valeur dans le tableau trié</span>
 <span class="n">v</span><span class="o">=</span><span class="n">choice</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
 <span class="c1">#On vérifie que la recherche renvoie bien l&#39;index de v</span>
-<span class="k">assert</span><span class="p">(</span><span class="n">dichotomie_DQ</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="n">T</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+<span class="k">assert</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">dichotomie_DQ</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span><span class="o">==</span><span class="n">v</span><span class="p">)</span>
 
 <span class="c1">#On vérifie que False est renvoyé lorsque la valeur v n&#39;est pas dans le tableau</span>
 <span class="n">v</span><span class="o">=-</span><span class="mi">1</span>
@@ -13331,10 +13331,10 @@ Indice de  41325  :
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-2">Exercice 2<a class="anchor-link" href="#Exercice-2">&#182;</a></h5><p>On considère le tabelau <code>T=[1,1,2,3,5,8,13,21]</code>.Ecrire la séquence des appels de la fonction précédente lors de l'éxécution de :</p>
+<h5 id="Exercice-2">Exercice 2<a class="anchor-link" href="#Exercice-2">&#182;</a></h5><p>On considère le tableau <code>T=[1,1,2,3,5,8,13,21]</code>.Ecrire la séquence des appels de la fonction précédente lors de l'éxécution de :</p>
 <ol>
-<li><code>dichotomie_DQ(T, 13 , 0, 7)</code></li>
-<li><code>dichotomie_DQ(T, 12 , 0, 7)</code></li>
+<li><code>dichotomie_DQ(13, T , 0, 7)</code></li>
+<li><code>dichotomie_DQ(12, T , 0, 7)</code></li>
 </ol>
 
 </div>
@@ -13393,7 +13393,7 @@ Indice de  41325  :
 </ul>
 <ul>
 <li>On fusionne les parties deux à deux:<ul>
-<li>$5,6$ | $3,1$ | $7,8$ | $2,4$</li>
+<li>$5,6$ | $1,3$ | $7,8$ | $2,4$</li>
 <li>$1,3,5,6$ | $2,4,7,8$</li>
 <li>$1,2,3,4,5,6,7,8$</li>
 </ul>
