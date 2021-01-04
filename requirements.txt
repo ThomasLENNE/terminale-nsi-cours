@@ -1,3 +1,4 @@
 pillow
 graphviz
 mocodo-magic
+folium
