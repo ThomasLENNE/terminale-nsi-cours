@@ -2,3 +2,4 @@ pillow
 graphviz
 mocodo-magic
 folium
+matplotlib
