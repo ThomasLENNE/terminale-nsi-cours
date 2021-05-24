@@ -3,3 +3,4 @@ graphviz
 mocodo-magic
 folium
 matplotlib
+pycryptodome
