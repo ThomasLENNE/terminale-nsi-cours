@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Pile_File</title>
+<title>Pile_File_2022</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13106,7 +13106,7 @@ div#notebook {
 <li>Historique d'un navigateur web.</li>
 <li>Pile des appels d'une fonction récursive.</li>
 <li>Un processeur utilise une pile pour gérer les instructions à éxécuter.</li>
-<li>Un algorithme de parcours en profondeur utilise une pile pour mémoriser les nœuds visités.</li>
+<li>Un algorithme de parcours en profondeur utilise une pile pour mémoriser les nœuds non encore visités.</li>
 </ul>
 </li>
 </ul>
@@ -13139,19 +13139,22 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><em>Représentations :</em></p>
 <ul>
-<li>Dans la pile <code>[1,2,3]</code> on considère que <code>3</code> est arrivé en dernier et se trouve au sommet de la pile.Ainsi empiler <code>4</code> placera la valeur <code>4</code> au sommet de la pile et donnera la pile <code>[1,2,3,4]</code></li>
+<li>Dans la pile ci-dessous, on considère que 3 est arrivé en dernier et se trouve au sommet de la pile.</li>
 </ul>
-<ul>
-<li><p>Utilisation d'une pile pour inverser les caractères <code>'AB'</code> en <code>'BA'</code> :
-<img src='abba.png' style='float:right;' width=500></p>
-<ul>
-<li>Empiler A</li>
-<li>Empiler B</li>
-<li>Dépiler B</li>
-<li>Dépiler A </li>
-</ul>
-</li>
-</ul>
+
+<pre><code>|3|
+|2|
+|1|
+|1|
+‾‾‾</code></pre>
+<p>Ainsi empiler 5 placera cette valeur au sommet de la pile et donnera la pile :</p>
+
+<pre><code>|5|
+|3|
+|2|
+|1|
+|1|
+‾‾‾</code></pre>
 
 </div>
 </div>
@@ -13184,41 +13187,55 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-1-:">Exercice 1 :<a class="anchor-link" href="#Exercice-1-:">&#182;</a></h5><p>Implémenter toutes les fonctionnalités proposées par l'interface en complétant le code de la classe <code>Pile</code>.</p>
+<h5 id="Exercice-1-:">Exercice 1 :<a class="anchor-link" href="#Exercice-1-:">&#182;</a></h5><p>Implémenter toutes les fonctionnalités de l'interface (numérotées plus haut) en complétant le code de la classe <code>Pile</code>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Pile</span><span class="p">:</span>
     <span class="c1">#1.</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeurs</span><span class="o">=</span><span class="p">[]):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="o">=</span><span class="n">valeurs</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="o">=</span><span class="p">[]</span>
         
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span> <span class="p">:</span>
-            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Affiche le contenu de la pile&#39;&#39;&#39;</span>
+        <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;| |&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;‾‾‾&#39;</span><span class="p">)</span>
+            
     
     <span class="c1">#2.</span>
     <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;renvoie True si la pile est vide,</span>
 <span class="sd">        False sinon&#39;&#39;&#39;</span>
+        
+        
         <span class="k">pass</span>
     
     <span class="c1">#3.</span>
     <span class="k">def</span> <span class="nf">empiler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Place l&#39;élément a au sommet de la pile&#39;&#39;&#39;</span>
+        
+        
         <span class="k">pass</span>
     
     <span class="c1">#4.</span>
     <span class="k">def</span> <span class="nf">depiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Supprime l&#39;élément placé au sommet de la pile</span>
-<span class="sd">        A condition qu&#39;elle soit non vide</span>
+<span class="sd">        A condition qu&#39;elle soit non vide.</span>
 <span class="sd">        Renvoie l&#39;élément supprimé.&#39;&#39;&#39;</span>
+        
+        
+        
         <span class="k">pass</span>
     
     <span class="c1">#5.</span>
@@ -13226,17 +13243,26 @@ div#notebook {
         <span class="sd">&#39;&#39;&#39;Renvoie la valeur du sommet de la pile</span>
 <span class="sd">        si elle est n&#39;est pas vide</span>
 <span class="sd">        (sans la retirer)&#39;&#39;&#39;</span>
+        
+        
+        
         <span class="k">pass</span>
     
     <span class="c1">#6.</span>
     <span class="k">def</span> <span class="nf">longueur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Renvoie le nombre d&#39;élément dans la pile&#39;&#39;&#39;</span>
+        
+        
         <span class="k">pass</span>
     
     <span class="c1">#7.</span>
     <span class="k">def</span> <span class="nf">vider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Vide la pile&#39;&#39;&#39;</span>
+        
+        
         <span class="k">pass</span>
+        
+<span class="c1">#Jeu de tests pour les piles ci-dessous        </span>
 </pre></div>
 
     </div>
@@ -13246,28 +13272,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Jeu de tests pour les piles</span>
-
-<span class="n">p</span><span class="o">=</span><span class="n">Pile</span><span class="p">([])</span>
-<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="c1">#[1,2,3]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">est_vide</span><span class="p">())</span> <span class="c1">#False</span>
-<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
-<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="c1">#[1, 2, 3, 4, 5, 6]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">longueur</span><span class="p">())</span> <span class="c1">#6</span>
-<span class="n">p</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="c1">#[1,2,3,4]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">sommet</span><span class="p">())</span><span class="c1">#4</span>
-<span class="n">p</span><span class="o">.</span><span class="n">vider</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">est_vide</span><span class="p">())</span> <span class="c1">#True</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1 init</span>
+<span class="n">p</span><span class="o">=</span><span class="n">Pile</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1"># la pile est vide par défaut</span>
 </pre></div>
 
     </div>
@@ -13284,12 +13294,255 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1, 2, 3]
-False
-[1, 2, 3, 4, 5, 6]
-6
-[1, 2, 3, 4]
-4
+<pre>| |
+‾‾‾
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2 est_vide</span>
+<span class="n">p</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span> <span class="c1"># renvoie True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3 empiler</span>
+<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>  <span class="c1"># 5 est au sommet de la pile</span>
+<span class="n">p</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span> <span class="c1"># renvoie False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>|5|
+|3|
+|2|
+|1|
+|1|
+‾‾‾
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#4 depiler</span>
+<span class="n">p</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1">#2 est au sommet de la pile</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>|2|
+|1|
+|1|
+‾‾‾
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#5 sommet</span>
+<span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">sommet</span><span class="p">()</span> <span class="c1"># le sommet est 5</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#6 longueur</span>
+<span class="n">p</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">longueur</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>|5|
+|2|
+|1|
+|1|
+‾‾‾
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#7 vider</span>
+<span class="n">p</span><span class="o">.</span><span class="n">vider</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">est_vide</span><span class="p">())</span> <span class="c1"># la pile est vide</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>| |
+‾‾‾
 True
 </pre>
 </div>
@@ -13304,7 +13557,7 @@ True
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Exercice-2-:">Exercice 2 :<a class="anchor-link" href="#Exercice-2-:">&#182;</a></h5><ul>
 <li>En utilisant les méthodes de l'implémentation précédente, compléter le code de la fonction <code>inverse(chaine)</code> qui prend en paramètre une chaîne de caractères et qui renvoie la chaîne de caractère inversée.</li>
-<li>Ainsi, <code>inverse('abcdef')</code> doit renvoyer <code>'fedcba'</code>.</li>
+<li>Par exemple, <code>inverse('abcdef')</code> doit renvoyer <code>'fedcba'</code>.</li>
 </ul>
 
 </div>
@@ -13312,37 +13565,44 @@ True
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+    <span class="c1">#on crée une pile vide</span>
+    <span class="n">p</span><span class="o">=...</span>
     
-    <span class="k">pass</span>
+    <span class="c1">#On parcourt la chaîne et on empile les éléments dans p</span>
+    <span class="k">for</span> <span class="n">lettre</span> <span class="ow">in</span> <span class="n">chaine</span><span class="p">:</span>
+        <span class="o">...</span>
 
-<span class="n">inverse</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">)</span>
+    <span class="c1">#On crée une chaîne de caractère vide</span>
+    <span class="n">inv</span><span class="o">=...</span>
+    
+    <span class="c1"># Tant que p n&#39;est pas vide, on dépile et on ajoute à la chaîne inversée.</span>
+    <span class="k">while</span> <span class="n">p</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
+        <span class="n">inv</span><span class="o">=...</span>
+
+    <span class="k">return</span> <span class="o">...</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[27]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;fedcba&#39;</pre>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#tests</span>
+<span class="k">assert</span> <span class="n">inverse</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;fedcba&#39;</span>
+<span class="k">assert</span> <span class="n">inverse</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;a&#39;</span>
+<span class="k">assert</span> <span class="n">inverse</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;&#39;</span>
+</pre></div>
 
-</div>
-
+    </div>
 </div>
 </div>
 
@@ -13352,13 +13612,13 @@ True
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="3.-File-(FIFO)">3. File (FIFO)<a class="anchor-link" href="#3.-File-(FIFO)">&#182;</a></h2><p><img src='file.png' style='float:right;' width=300></p>
 <ul>
-<li>Dans une file ("queue" en anglais), chaque opération de retrait retire l'élément qui avait été ajouté en premier. on associe cette structure à l'image d'une file d'attente, dans laquelle les personnes arrivent à tour de rôle, patientent et sont servies dans leur ordre d'arrivée.</li>
+<li>Dans une file ("queue" en anglais), chaque opération de retrait retire l'élément qui avait été ajouté en premier. On associe cette structure à l'image d'une file d'attente, dans laquelle les personnes arrivent à tour de rôle, patientent et sont servies dans leur ordre d'arrivée.</li>
 <li>Ce principe est appelé "premier entré, premier sorti", plus couramment en anglais FIFO (First In First Out).</li>
 <li>En programmation, les files sont utiles pour mettre en attente des informations dans l'ordre dans lequel elles sont arrivées.</li>
 <li>Exemple d'utilisation :<ul>
 <li>Les serveurs d'impression traitent les requêtes dans l'ordre dans lequel elles arrivent et les insèrent dans une file d'attente (dite aussi queue ou spool).</li>
-<li>Un algorithme de parcours en largeur utilise une file pour mémoriser les nœuds visités.</li>
-<li>Gestion de mémoires tampons (en anglais « buffers »), par exemple la lecture d'une vidéo.</li>
+<li>Un algorithme de parcours en largeur utilise une file pour mémoriser les nœuds non encore visités.</li>
+<li>Gestion de mémoires tampons (en anglais « buffers »), par exemple lors de la lecture d'une vidéo.</li>
 </ul>
 </li>
 </ul>
@@ -13389,18 +13649,13 @@ True
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Représentations :</em></p>
-<ul>
-<li>Dans la fille <code>[3,2,1]</code>, on considère que <code>1</code> est arrivé en premier et se trouve en tête de file. Ainsi enfiler <code>4</code> placera 4 en queue de file et donnera la file <code>[4,3,2,1]</code></li>
-</ul>
-<p>Schéma d'utilisation d'une file.
-<img src='fifo.png' style='float:right;' width=300></p>
-<ul>
-<li>Enfiler A</li>
-<li>Enfiler B</li>
-<li>Défiler A</li>
-<li>Défiler B </li>
-</ul>
+<p><em>Représentation :</em></p>
+<p>Dans la file ci-dessous, on considère que 1 est arrivé en premier et se trouve en tête de file.</p>
+
+<pre><code>→ 3 | 2 | 1 | 1 →</code></pre>
+<p>Ainsi, enfiler 5 le placera en queue de file et donnera la file</p>
+
+<pre><code>→ 5 | 3 | 2 | 1 | 1 →</code></pre>
 
 </div>
 </div>
@@ -13428,58 +13683,82 @@ True
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-3-:">Exercice 3 :<a class="anchor-link" href="#Exercice-3-:">&#182;</a></h5><p>Implémenter les fonctionnalités décrites dans l'interface d'une file.</p>
+<h5 id="Exercice-3-:">Exercice 3 :<a class="anchor-link" href="#Exercice-3-:">&#182;</a></h5><p>Implémenter les fonctionnalités de l'interface d'une file numérotées plus haut.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">File</span><span class="p">:</span>
     <span class="c1">#1.</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeurs</span><span class="o">=</span><span class="p">[]):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="o">=</span><span class="n">valeurs</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="o">=</span><span class="p">[]</span>
         
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Affiche le contenu de la file&#39;&#39;&#39;</span>
+        <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;→&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; | &#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">valeurs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;→&#39;</span><span class="p">)</span>
+        
         
     <span class="c1">#2.</span>
     <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;renvoie True si la file est vide,</span>
 <span class="sd">        False sinon&#39;&#39;&#39;</span>
+        
+        
         <span class="k">pass</span>
     
     <span class="c1">#3.</span>
     <span class="k">def</span> <span class="nf">enfiler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;Place l&#39;élément a au sommet de la file&#39;&#39;&#39;</span>
+        <span class="sd">&#39;&#39;&#39;Place l&#39;élément a en queue de file&#39;&#39;&#39;</span>
+        
+        
         <span class="k">pass</span>
     
     <span class="c1">#4.</span>
     <span class="k">def</span> <span class="nf">defiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;Supprime l&#39;élément placé au sommet de la file</span>
+        <span class="sd">&#39;&#39;&#39;Supprime l&#39;élément placé en tête de  file</span>
 <span class="sd">        A condition qu&#39;elle soit non vide</span>
 <span class="sd">        Renvoie l&#39;élément supprimé.&#39;&#39;&#39;</span>
-        <span class="k">pass</span>
         
+        
+        
+        <span class="k">pass</span>
+    
     <span class="c1">#5.</span>
     <span class="k">def</span> <span class="nf">tete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Renvoie la valeur en début de file</span>
 <span class="sd">        si elle n&#39;est pas vide</span>
 <span class="sd">        (sans la defiler)&#39;&#39;&#39;</span>
+        
+        
+        
         <span class="k">pass</span>
     
     <span class="c1">#6.</span>
     <span class="k">def</span> <span class="nf">longueur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Renvoie le nombre d&#39;élément dans la file&#39;&#39;&#39;</span>
+        
+        
         <span class="k">pass</span>
     
     <span class="c1">#7.</span>
     <span class="k">def</span> <span class="nf">vider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Vide la file&#39;&#39;&#39;</span>
+        
+        
         <span class="k">pass</span>
+
+<span class="c1">#Jeu de tests pour les files</span>
 </pre></div>
 
     </div>
@@ -13489,28 +13768,12 @@ True
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Jeu de tests pour les files</span>
-
-<span class="n">f</span><span class="o">=</span><span class="n">File</span><span class="p">([])</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1">#[3,2,1]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">est_vide</span><span class="p">())</span> <span class="c1">#False</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1">#[6,5,4,3,2,1]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">longueur</span><span class="p">())</span> <span class="c1">#6</span>
-<span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">()</span>
-<span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1">#[6,5,4,3]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">tete</span><span class="p">())</span><span class="c1">#3</span>
-<span class="n">f</span><span class="o">.</span><span class="n">vider</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">est_vide</span><span class="p">())</span> <span class="c1">#True</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1 init</span>
+<span class="n">f</span><span class="o">=</span><span class="n">File</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1">#La file f est vide</span>
 </pre></div>
 
     </div>
@@ -13527,13 +13790,227 @@ True
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[3, 2, 1]
-False
-[6, 5, 4, 3, 2, 1]
-6
-[6, 5, 4, 3]
-3
-True
+<pre>→ →
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2 est_vide</span>
+<span class="n">f</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span> <span class="c1"># renvoie True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3 enfiler</span>
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> 
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1"># 1 est en tête de file</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>→ 5 | 3 | 2 | 1 | 1 →
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#4 defiler</span>
+<span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1">#3 est en tête de file</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>→ 5 | 3 →
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#5 tete</span>
+<span class="n">f</span><span class="o">.</span><span class="n">tete</span><span class="p">()</span> <span class="c1">#renvoie 3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#6 longueur</span>
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">longueur</span><span class="p">()</span> <span class="c1">#renvoie 2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>→ 5 | 3 →
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#7 vider</span>
+<span class="n">f</span><span class="o">.</span><span class="n">vider</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1">#la file est vide</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>→ →
 </pre>
 </div>
 </div>
@@ -13559,8 +14036,10 @@ True
 <li>Une file est dans ce cas caractérisée par deux piles. La première contient les éléments que l'on veut enfiler, la seconde contient les éléments que l'on veut défiler.</li>
 </ul>
 <p><img src='2piles.gif' style='float:right;' width=150></p>
+<p><em>Exemple :</em></p>
+<p>On veut créer la file <code>→ 3 | 2 | 1  →</code> , enfiler 4 puis défiler l'élément 1.</p>
+<p>La file deviendra alors <code>→ 4 | 3 | 2  →</code>.</p>
 <ul>
-<li>Exemple : On veut créer la file <code>[3,2,1]</code>, en filer <code>4</code> puis défiler l'élément <code>1</code>, de telle sorte que la file devienne alors <code>[4,3,2]</code>.<ul>
 <li>On crée 2 piles, une pile d'entrée et une pile de sortie.</li>
 <li>Pour enfiler un élément, il suffit d'empiler les éléments dans leur ordre d'arrivée dans la pile d'entrée.<ul>
 <li>Ainsi , on empile les trois premiers éléments <code>1</code> , puis <code>2</code> puis <code>3</code> et ensuite le quatrième <code>4</code></li>
@@ -13573,8 +14052,6 @@ True
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 
 </div>
 </div>
@@ -13582,44 +14059,82 @@ True
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-4-:">Exercice 4 :<a class="anchor-link" href="#Exercice-4-:">&#182;</a></h5><p>A l'aide de la description précédente et des méthodes de la classe <code>Pile</code>, implémenter une file à l'aide de deux piles.</p>
+<h5 id="Exercice-4-:">Exercice 4 :<a class="anchor-link" href="#Exercice-4-:">&#182;</a></h5><p>A l'aide de la description précédente et des méthodes de la classe <code>Pile</code>, compléter le code de la classe <code>File</code>ci-dessous :</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">File</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">entree</span><span class="o">=</span><span class="n">Pile</span><span class="p">([]),</span><span class="n">sortie</span><span class="o">=</span><span class="n">Pile</span><span class="p">([])):</span>
-        <span class="sd">&#39;&#39;&#39;Initialise une file à l&#39;aide de deux piles&#39;&#39;&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">entree</span><span class="o">=</span><span class="n">entree</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sortie</span><span class="o">=</span><span class="n">sortie</span>
+    <span class="c1">#1</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Initialise une file à l&#39;aide de deux piles vides&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entree</span><span class="o">=...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sortie</span><span class="o">=...</span>
     
+    <span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Affiche le contenu de la file&#39;&#39;&#39;</span>
+        <span class="n">n1</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">entree</span><span class="o">.</span><span class="n">valeurs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;→&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n1</span> <span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n1</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">entree</span><span class="o">.</span><span class="n">valeurs</span><span class="p">[</span><span class="n">n1</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">]),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; | &#39;</span><span class="p">)</span>
+            
+        <span class="n">n2</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sortie</span><span class="o">.</span><span class="n">valeurs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n2</span> <span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n2</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sortie</span><span class="o">.</span><span class="n">valeurs</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; | &#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sortie</span><span class="o">.</span><span class="n">valeurs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;→&#39;</span><span class="p">)</span>
     
+    <span class="c1">#2</span>
     <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Renvoie True si la file est vide,</span>
 <span class="sd">        False sinon&#39;&#39;&#39;</span>
-        <span class="k">pass</span>
-    
+        <span class="k">return</span> <span class="o">...</span> <span class="ow">and</span> <span class="o">...</span>
+            
+    <span class="c1">#3</span>
     <span class="k">def</span> <span class="nf">enfiler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Place l&#39;élément a en tête de file&#39;&#39;&#39;</span>
-        <span class="k">pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entree</span><span class="o">.</span> <span class="o">...</span>
     
+    <span class="c1">#4</span>
     <span class="k">def</span> <span class="nf">defiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;defile l&#39;élément a en tête de file</span>
+        <span class="sd">&#39;&#39;&#39;Si la file n&#39;est pas vide, défile l&#39;élément en tête de file</span>
 <span class="sd">        et le renvoie&#39;&#39;&#39;</span>
-        <span class="k">pass</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sortie</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+                <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">entree</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+                    <span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">entree</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+                    <span class="o">...</span>
+        <span class="k">return</span> <span class="o">...</span>
             
+    <span class="c1">#5 </span>
+    <span class="k">def</span> <span class="nf">tete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Renvoie la valeur de l&#39;élément en tête de file, si la file n&#39;est pas vide.</span>
+<span class="sd">        Cet élément n&#39;est pas supprimé&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">entree</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="k">return</span> <span class="o">...</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">...</span>
+        
+    
+    <span class="c1">#6</span>
     <span class="k">def</span> <span class="nf">longueur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;renvoie len nombre d&#39;éléments dans la file&#39;&#39;&#39;</span>
-        <span class="k">pass</span>
+        <span class="sd">&#39;&#39;&#39;Renvoie len nombre d&#39;éléments dans la file&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="o">...</span>
      
+    <span class="c1">#7</span>
     <span class="k">def</span> <span class="nf">vider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;vide la file&#39;&#39;&#39;</span>
-        <span class="k">pass</span>
+        <span class="sd">&#39;&#39;&#39;Vide la file&#39;&#39;&#39;</span>
+        <span class="o">...</span>
+        <span class="o">...</span>
+        
+<span class="c1">#Jeu de tests pour les files</span>
 </pre></div>
 
     </div>
@@ -13629,28 +14144,12 @@ True
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Jeu de tests pour les files</span>
-
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1 init</span>
 <span class="n">f</span><span class="o">=</span><span class="n">File</span><span class="p">()</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">est_vide</span><span class="p">())</span> <span class="c1">#False</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">longueur</span><span class="p">())</span> <span class="c1">#6</span>
-<span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">())</span> <span class="c1">#2</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">longueur</span><span class="p">())</span>
-<span class="n">f</span><span class="o">.</span><span class="n">vider</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">est_vide</span><span class="p">())</span> <span class="c1">#True</span>
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1">#La file est vide</span>
 </pre></div>
 
     </div>
@@ -13667,11 +14166,214 @@ True
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>False
-6
-2
-4
-True
+<pre>→ →
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2 est_vide</span>
+<span class="n">f</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span> <span class="c1"># renvoie True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3 enfiler</span>
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1">#1 est en tête de file</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>→ 6 | 5 | 4 | 3 | 2 | 1 | →
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#4 defiler</span>
+<span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">()</span> <span class="c1">#1</span>
+<span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">()</span> <span class="c1">#2</span>
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1">#3 est en tête de file</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>→ 6 | 5 | 4 | 3 →
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#5 tete</span>
+<span class="n">f</span><span class="o">.</span><span class="n">tete</span><span class="p">()</span> <span class="c1"># renvoie 3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#6 longueur</span>
+<span class="n">f</span><span class="o">.</span><span class="n">longueur</span><span class="p">()</span> <span class="c1">#4</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#7 vider</span>
+<span class="n">f</span><span class="o">.</span><span class="n">vider</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span> <span class="c1"># la file est vide</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>→ →
 </pre>
 </div>
 </div>
@@ -13683,18 +14385,31 @@ True
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-5-:">Exercice 5 :<a class="anchor-link" href="#Exercice-5-:">&#182;</a></h5><p>Ecrire la fonction <code>pile_vers_file(pile)</code> qui prend en paramètre une pile et qui renvoie cette pile transformée en file.
-Ainsi la Pile <code>1,2,3</code> deviendra <code>3,2,1</code></p>
+<h5 id="Exercice-5-:">Exercice 5 :<a class="anchor-link" href="#Exercice-5-:">&#182;</a></h5><p>Ecrire la fonction <code>pile_vers_file(pile)</code> qui prend en paramètre une pile et qui renvoie cette pile transformée en file.</p>
+<p>Ainsi la pile ci-dessous,</p>
+
+<pre><code>|3|
+|2|
+|1|
+‾‾‾</code></pre>
+<p>deviendra la file <code>→ 1 | 2 | 3 →</code></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pile_vers_file</span><span class="p">(</span><span class="n">pile</span><span class="p">):</span>
+    <span class="n">file</span><span class="o">=</span><span class="n">File</span><span class="p">()</span>
+    
+    
+    
+    
+    
+    <span class="k">return</span> <span class="n">file</span>
 </pre></div>
 
     </div>
@@ -13704,21 +14419,43 @@ Ainsi la Pile <code>1,2,3</code> deviendra <code>3,2,1</code></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#test pile_vers_file</span>
-<span class="n">p</span><span class="o">=</span><span class="n">Pile</span><span class="p">([])</span>
+<span class="n">p</span><span class="o">=</span><span class="n">Pile</span><span class="p">()</span>
 <span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
 
 <span class="n">f</span><span class="o">=</span><span class="n">pile_vers_file</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">(),</span> <span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">(),</span> <span class="n">f</span><span class="o">.</span><span class="n">defiler</span><span class="p">())</span>
+<span class="n">f</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>|3|
+|2|
+|1|
+‾‾‾
+→ 1 | 2 | 3 | →
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13734,7 +14471,7 @@ Ainsi la Pile <code>1,2,3</code> deviendra <code>3,2,1</code></p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Exercice-6-:">Exercice 6 :<a class="anchor-link" href="#Exercice-6-:">&#182;</a></h5><p>On souhaite simuler la distribution d'un jeu de 32 cartes entre 2 joueurs. On suppose que toutes les cartes seront distribuées.
-On modélise le jeu de 32 cartes par une pile contenant les cartes qu sont mélangées(voir code donné).
+On modélise le jeu de 32 cartes par une pile contenant les cartes qui sont mélangées(voir code donné).
 Pour la distribution, chaque carte au sommet de la pile est donné tour à tour aux deux joueurs pour constituer deux piles. Les deux dernières cartes distribuées sont donc au sommet de chacune des deux piles.</p>
 <p>Ecrire les instructions qui permettent de distribuer ainsi un jeu de 32 cartes.</p>
 
@@ -13743,26 +14480,30 @@ Pour la distribution, chaque carte au sommet de la pile est donné tour à tour 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="c1">#jeu de 32 cartes</span>
 <span class="n">cartes</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;7&#39;</span><span class="p">,</span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="s1">&#39;9&#39;</span><span class="p">,</span><span class="s1">&#39;10&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;♠&quot;</span><span class="p">,</span><span class="s2">&quot;♥&quot;</span><span class="p">,</span><span class="s2">&quot;♦&quot;</span><span class="p">,</span><span class="s2">&quot;♣&quot;</span><span class="p">]]</span>
 <span class="n">shuffle</span><span class="p">(</span><span class="n">cartes</span><span class="p">)</span>
-<span class="n">jeu</span><span class="o">=</span><span class="n">Pile</span><span class="p">(</span><span class="n">cartes</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;JEU :&#39;</span><span class="p">,</span><span class="n">jeu</span><span class="p">)</span>
+
+<span class="c1">#le jeu est une pile</span>
+<span class="n">jeu</span><span class="o">=</span><span class="n">Pile</span><span class="p">()</span>
+<span class="n">jeu</span><span class="o">.</span><span class="n">valeurs</span><span class="o">=</span><span class="n">cartes</span>
+<span class="n">jeu</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="c1">#distribution des cartes (piles)</span>
-<span class="k">pass</span>
+<span class="n">jeu1</span><span class="o">=</span><span class="n">Pile</span><span class="p">()</span>
+<span class="n">jeu2</span><span class="o">=</span><span class="n">Pile</span><span class="p">()</span>
 
 
 
 
-<span class="c1">#tests</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">jeu1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">jeu2</span><span class="p">)</span>
+
+
+<span class="c1">#</span>
 </pre></div>
 
     </div>
@@ -13779,10 +14520,112 @@ Pour la distribution, chaque carte au sommet de la pile est donné tour à tour 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>JEU : [&#39;8♥&#39;, &#39;V♥&#39;, &#39;R♥&#39;, &#39;7♠&#39;, &#39;7♦&#39;, &#39;A♦&#39;, &#39;A♣&#39;, &#39;9♦&#39;, &#39;8♣&#39;, &#39;A♥&#39;, &#39;A♠&#39;, &#39;V♦&#39;, &#39;R♦&#39;, &#39;V♣&#39;, &#39;D♣&#39;, &#39;10♦&#39;, &#39;V♠&#39;, &#39;7♥&#39;, &#39;D♥&#39;, &#39;9♣&#39;, &#39;9♥&#39;, &#39;10♠&#39;, &#39;R♠&#39;, &#39;R♣&#39;, &#39;10♥&#39;, &#39;D♦&#39;, &#39;D♠&#39;, &#39;10♣&#39;, &#39;8♦&#39;, &#39;9♠&#39;, &#39;8♠&#39;, &#39;7♣&#39;]
+<pre>|D♦|
+|A♥|
+|8♠|
+|10♣|
+|R♦|
+|7♦|
+|9♥|
+|R♠|
+|A♦|
+|V♣|
+|V♦|
+|A♠|
+|D♣|
+|10♥|
+|D♥|
+|8♥|
+|V♠|
+|8♣|
+|7♠|
+|7♥|
+|9♠|
+|9♣|
+|V♥|
+|R♥|
+|9♦|
+|7♣|
+|A♣|
+|D♠|
+|R♣|
+|8♦|
+|10♠|
+|10♦|
+‾‾‾
 
-[&#39;7♣&#39;, &#39;9♠&#39;, &#39;10♣&#39;, &#39;D♦&#39;, &#39;R♣&#39;, &#39;10♠&#39;, &#39;9♣&#39;, &#39;7♥&#39;, &#39;10♦&#39;, &#39;V♣&#39;, &#39;V♦&#39;, &#39;A♥&#39;, &#39;9♦&#39;, &#39;A♦&#39;, &#39;7♠&#39;, &#39;V♥&#39;]
-[&#39;8♠&#39;, &#39;8♦&#39;, &#39;D♠&#39;, &#39;10♥&#39;, &#39;R♠&#39;, &#39;9♥&#39;, &#39;D♥&#39;, &#39;V♠&#39;, &#39;D♣&#39;, &#39;R♦&#39;, &#39;A♠&#39;, &#39;8♣&#39;, &#39;A♣&#39;, &#39;7♦&#39;, &#39;R♥&#39;, &#39;8♥&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#tests</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jeu 1&#39;</span><span class="p">)</span>
+<span class="n">jeu1</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jeu 2&#39;</span><span class="p">)</span>
+<span class="n">jeu2</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Jeu 1
+|10♠|
+|R♣|
+|A♣|
+|9♦|
+|V♥|
+|9♠|
+|7♠|
+|V♠|
+|D♥|
+|D♣|
+|V♦|
+|A♦|
+|9♥|
+|R♦|
+|8♠|
+|D♦|
+‾‾‾
+
+Jeu 2
+|10♦|
+|8♦|
+|D♠|
+|7♣|
+|R♥|
+|9♣|
+|7♥|
+|8♣|
+|8♥|
+|10♥|
+|A♠|
+|V♣|
+|R♠|
+|7♦|
+|10♣|
+|A♥|
+‾‾‾
 </pre>
 </div>
 </div>
@@ -13807,8 +14650,8 @@ Pour la distribution, chaque carte au sommet de la pile est donné tour à tour 
 </ul>
 <p><strong>Partie A : Manipulation</strong></p>
 <ol>
-<li>Quelle notation sera utilisée pour calculer <code>(3+4)*6+1</code> ? <strong>Réponse :</strong> </li>
-<li>A quelle expression correspond la notation <code>4132*+*</code>? <strong>Réponse :</strong> </li>
+<li>Quelle notation sera utilisée pour calculer <code>(3+4)*6+1</code> ? <strong>Réponse :</strong></li>
+<li>A quelle expression correspond la notation <code>4132*+*</code>? <strong>Réponse :</strong></li>
 </ol>
 <p><strong>Partie B : Implémentation</strong></p>
 <p>Pour simplifier , on suppose que :</p>
@@ -13821,7 +14664,7 @@ Pour la distribution, chaque carte au sommet de la pile est donné tour à tour 
 <ul>
 <li>Si on voit un nombre , on le place sur la pile.</li>
 <li>Si on voit un opérateur, on récupère les deux nombres au sommet de la pile, on leur applique l'opérateur et on replace le résultat au sommet de la pile.</li>
-<li>A la fin du processus, il reste exactement un bombre sur la pile, qui est le résultat.</li>
+<li>A la fin du processus, il reste exactement un nombre sur la pile, qui est le résultat.</li>
 </ul>
 <p>Ecrire la fonction <code>npi(expr)</code> qui prend en paramètre un chaîne de caractères contenant une expression à évaluer et qui renvoie le résultat de l'évalution de cette expression.</p>
 
@@ -13830,13 +14673,27 @@ Pour la distribution, chaque carte au sommet de la pile est donné tour à tour 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">npi</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="c1">#pile pour stocker les résultats intermédiaires</span>
     <span class="n">pile</span><span class="o">=</span><span class="n">Pile</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">expr</span><span class="p">:</span>
-        <span class="k">pass</span>
+    <span class="c1">#variable qui contient le résultat final</span>
+    <span class="n">res</span><span class="o">=</span><span class="mi">0</span>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     <span class="k">return</span> <span class="n">res</span>
 </pre></div>
@@ -13848,7 +14705,7 @@ Pour la distribution, chaque carte au sommet de la pile est donné tour à tour 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#tests pour la fonction npi</span>
@@ -13877,7 +14734,7 @@ Pour la distribution, chaque carte au sommet de la pile est donné tour à tour 
 <li>La parenthèse ouvrante d'indice $1$ est associée à la prenthèse fermante d'indice $10$.</li>
 <li>La parenthèse fermante d'indice $6$ est associée à la parenthèse ouvrante d'indice $4$.</li>
 <li><p>Quelle autre association de parenthèses peut-on faire dans cette chaîne ?</p>
-<p><strong>Réponse</strong> : la parenthèse ouvrante d'indice $8$ est associée à la parenthèse fermante d'indice $9$.</p>
+<p><strong>Réponse</strong> :</p>
 </li>
 </ul>
 </li>
@@ -13896,28 +14753,27 @@ Pour la distribution, chaque carte au sommet de la pile est donné tour à tour 
 </ul>
 </li>
 </ol>
-<p>A l'aide de ces indications, programmer la fonction.</p>
+<p>A l'aide de ces indications, compléter la fonction.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ouvrante_associee</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">chaine</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;chaine : chaine de caractères bien parenthésée</span>
 <span class="sd">       f : indice d&#39;une parenthèse fermante, entier</span>
 <span class="sd">       return : indice de sa parenthèse ouvrante associée, entier&#39;&#39;&#39;</span>
-    <span class="k">pass</span>
-    
-    
-    
-    
-    
-    
-    
+    <span class="n">pile</span><span class="o">=</span><span class="n">Pile</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">chaine</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==...</span><span class="p">:</span>
+            <span class="n">pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">chaine</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==...</span><span class="p">:</span>
+            <span class="o">...</span>
+    <span class="k">return</span> <span class="o">...</span>
 </pre></div>
 
     </div>
@@ -13927,7 +14783,7 @@ Pour la distribution, chaque carte au sommet de la pile est donné tour à tour 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#tests ouvrante_associée</span>
@@ -13983,11 +14839,12 @@ On pourra utiliser une pile pour stocker toutes les parenthèses ouvrantes non e
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bonnes_parentheses</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
-    <span class="k">pass</span>
+    <span class="n">pile</span><span class="o">=</span><span class="n">Pile</span><span class="p">()</span>
+    <span class="n">reponse</span> <span class="o">=</span><span class="kc">True</span>
     
     
     
@@ -13995,6 +14852,13 @@ On pourra utiliser une pile pour stocker toutes les parenthèses ouvrantes non e
     
     
     
+    
+    
+    
+    
+    
+    
+    <span class="k">return</span> <span class="n">reponse</span>       
 </pre></div>
 
     </div>
@@ -14004,7 +14868,7 @@ On pourra utiliser une pile pour stocker toutes les parenthèses ouvrantes non e
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#tests bonnes_parenthèses</span>
