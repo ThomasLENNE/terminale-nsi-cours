@@ -1,6 +1,6 @@
 pillow
 graphviz
-mocodo-magic
+mocodo
 folium
 matplotlib
 pycryptodome
