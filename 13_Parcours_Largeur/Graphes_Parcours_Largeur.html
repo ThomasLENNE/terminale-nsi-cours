@@ -13205,7 +13205,15 @@ div#notebook {
         <span class="n">courant</span><span class="o">=</span><span class="p">[</span><span class="n">source</span><span class="p">]</span>
         <span class="n">suivant</span><span class="o">=</span><span class="p">[]</span>
         
-        <span class="k">pass</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         <span class="k">return</span> <span class="n">dist</span>
@@ -13217,13 +13225,30 @@ div#notebook {
         <span class="n">file</span><span class="o">.</span><span class="n">enfiler</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
         
         
-        <span class="k">pass</span>
+       
+    
+    
+    
+    
+    
+    
+    
+    
     
     
         <span class="k">return</span> <span class="n">dist</span>
     
     <span class="c1">#Ex4</span>
     <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">):</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         <span class="k">pass</span>
     
@@ -13237,7 +13262,17 @@ div#notebook {
         <span class="n">suivant</span><span class="o">=</span><span class="p">[]</span>
         
         
-        <span class="k">pass</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -13247,7 +13282,20 @@ div#notebook {
         <span class="n">vus</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parcours_chemin</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
         <span class="n">chem</span><span class="o">=</span><span class="p">[]</span>
         
-        <span class="k">pass</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         <span class="n">chem</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">chem</span>
@@ -13447,9 +13495,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Partie-A-:">Partie A :<a class="anchor-link" href="#Partie-A-:">&#182;</a></h5><ol>
-<li>Construire et afficher le graphe associé à ce labyrinthe.</li>
-</ol>
+<h5 id="Partie-A-:">Partie A :<a class="anchor-link" href="#Partie-A-:">&#182;</a></h5><p><strong>1.</strong> Construire et afficher le graphe associé à ce labyrinthe.</p>
 
 </div>
 </div>
@@ -13463,6 +13509,18 @@ div#notebook {
 <span class="n">laby</span><span class="o">=</span><span class="n">Graphe</span><span class="p">()</span>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="n">laby</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
 </pre></div>
 
@@ -13474,9 +13532,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Vérifier que le plus court chemin  entre le départ et l'arrivée est égal à 6.</li>
-</ol>
+<p><strong>2.</strong> Vérifier que le plus court chemin  entre le départ et l'arrivée est égal à 6.</p>
 
 </div>
 </div>
@@ -13499,15 +13555,13 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Partie-B-:">Partie B :<a class="anchor-link" href="#Partie-B-:">&#182;</a></h4><p>Dans cette partie, on cherche à utiliser le parcours en largeur pour construire le plus court chemin entre deux sommets du graphe, lorsque c'est possible.</p>
-<p>Pour cela , on ajoute deux méthodes à la classe <code>Graphe</code> :</p>
-<ol>
-<li>La méthode <code>parcours_chemin(self, source)</code>:<ul>
+<p>Pour cela , on ajoute deux méthodes à la classe <code>Graphe</code> :
+<strong>1.</strong>  La méthode <code>parcours_chemin(self, source)</code>:</p>
+<ul>
 <li>Elle ressemble beaucoup à la méthode<code>parcours_largeur</code>.</li>
 <li>L'idée est de remplacer le dictionnaire <code>dist</code> par un dictionnaire <code>vus</code>de telle sorte que l'on associe à chaque sommet visité, en plus de la distance à la source, le sommet qui a permis de l'atteindre pendant le parcours en largeur. Pour le sommet source, on lui associe la valeur <code>None</code>. Ainsi les clés de ce dictionnaire sont les sommets et les valeurs associés peuvent un tuple contenant la distance à la source et le sommet origine.</li>
 <li>Après le parcours, on pourra utiliser le contenu du dictionnaire pour remonter d'un sommet à un autre.</li>
 </ul>
-</li>
-</ol>
 <p>Compléter cette méthode dans la classe <code>Graphe</code>.</p>
 
 </div>
@@ -13530,9 +13584,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>La méthode <code>chemin(self,s1,s2)</code>. Cette fonction renvoie le plus court chemin entre s1 et s2 sous forme d'une liste de sommets.</li>
-</ol>
+<p><strong>2.</strong> La méthode <code>chemin(self,s1,s2)</code>. Cette fonction renvoie le plus court chemin entre s1 et s2 sous forme d'une liste de sommets.</p>
 <p>Compléter cette méthode.</p>
 <p><em>Aides :</em></p>
 <ul>
