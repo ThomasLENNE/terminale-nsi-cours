@@ -13187,14 +13187,16 @@ div#notebook {
 <li><p>Elle permet de restreindre les colonnes de la table.</p>
 <ul>
 <li>Les colonnes que l'on veut obtenir sont listées après <code>SELECT</code>, séparées par une virgule.</li>
-<li>##### Exemple 4:<ul>
+<li><p><strong><em>Exemple 4:</em></strong></p>
+<ul>
 <li><strong>Question :</strong> Quels sont les noms et les prix unitaires des produits dont le prix unitaire est supérieur à 2 euros ?</li>
 <li><strong>Ordre SQL:</strong> <code>SELECT nomProd,puProd FROM PRODUIT WHERE puProd &gt;=2;</code></li>
 <li><strong>Réponse du système:</strong><img src='exemple4.png' style='float:center;' width=200> </li>
 </ul>
 </li>
-<li>Si l'on veut récupérer toutes les colonnes, on peut utiliser le symbole <code>*</code> après <code>SELECT</code>.</li>
-<li>##### Exemple 5:<ul>
+<li><p>Si l'on veut récupérer toutes les colonnes, on peut utiliser le symbole <code>*</code> après <code>SELECT</code>.</p>
+</li>
+<li><strong><em>Exemple 5:</em></strong><ul>
 <li><strong>Question :</strong> Quels sont les produits dont le prix unitaire est supérieur à 2 euros ?</li>
 <li><strong>Ordre SQL:</strong> <code>SELECT * FROM PRODUIT WHERE puProd &gt;=2;</code></li>
 <li><strong>Réponse du système:</strong><img src='exemple5.png' style='float:center;' width=250> </li>
@@ -13202,16 +13204,16 @@ div#notebook {
 </li>
 </ul>
 </li>
-<li><p>Ele permet aussi d'appeler des fonctions pour effectuer par exemple des calculs(somme, moyenne, comptage, minimum, maximum...) et de renvoyer le résultat dans une table avec une ligne et une colonne.</p>
+<li><p>Elle permet aussi d'appeler des fonctions pour effectuer par exemple des calculs(somme, moyenne, comptage, minimum, maximum...) et de renvoyer le résultat dans une table avec une ligne et une colonne.</p>
 <ul>
-<li><p>##### Exemple 6:</p>
+<li><p><strong><em>Exemple 6:</em></strong></p>
 <ul>
 <li><strong>Question :</strong> Quel est le prix unitaire moyen des produits proposés  ?</li>
 <li><strong>Ordre SQL:</strong> <code>SELECT AVG(puProd) FROM PRODUIT ;</code></li>
 <li><strong>Réponse du système:</strong><img src='exemple6.png' style='float:center;' width=100> </li>
 </ul>
 </li>
-<li><p>##### Exemple 6bis:</p>
+<li><p><strong><em>Exemple 6bis:</em></strong></p>
 <ul>
 <li>Il est possible de renommer la ou les colonnes de la table obtenue avec <code>AS</code></li>
 <li><strong>Ordre SQL:</strong> <code>SELECT AVG(puProd) AS prix_moyen FROM PRODUIT ;</code></li>
@@ -13239,14 +13241,14 @@ div#notebook {
 <h3 id="Tri,-gestion-des-doublons-(ORDER-BY...,-DISTINCT...)">Tri, gestion des doublons (ORDER BY..., DISTINCT...)<a class="anchor-link" href="#Tri,-gestion-des-doublons-(ORDER-BY...,-DISTINCT...)">&#182;</a></h3><ul>
 <li><p>Les résultats des requêtes ne sont pas toujours affichés dans le même ordre. En fonction de certains paramètres, le SGBD peut choisir entre différentes façons de calculer les requêtes. L'affichage peut varier entre plusieurs éxécutions d'une même requête.Pour gérer cela , on peut demander un classement des résultats à l'aide de <code>ORDER BY</code>.</p>
 <ul>
-<li><p>##### Exemple 7:</p>
+<li><p><strong><em>Exemple 7:</em></strong></p>
 <ul>
 <li><strong>Demande :</strong> Les noms et les prix des produits , classés par ordre alphabétique.</li>
 <li><strong>Ordre SQL:</strong> <code>SELECT nomProd, puProd FROM PRODUIT ORDER BY nomProd ASC;</code></li>
 <li><strong>Réponse du système:</strong><img src='exemple7.png' style='float:center;' width=250> </li>
 </ul>
 </li>
-<li><p>##### Exemple 8:</p>
+<li><p><strong><em>Exemple 8:</em></strong></p>
 <ul>
 <li><strong>Demande :</strong> Les noms et les prix des produits, classés par prix décroissants.</li>
 <li><strong>Ordre SQL:</strong> <code>SELECT nomProd, puProd FROM PRODUIT ORDER BY puProd DESC;</code></li>
@@ -13258,7 +13260,7 @@ div#notebook {
 </ul>
 <ul>
 <li>Dans les résultats d'une requête peuvent apparaître des lignes en plusieurs exemplaires (âr exemple, les villes des clients).Pour retirer les doublons, on ajoute le mot-clé <code>DISTINCT</code> à la clause <code>SELECT</code>.<ul>
-<li>##### Exemple 9:<ul>
+<li><strong><em>Exemple 9:</em></strong><ul>
 <li><strong>Demande :</strong> Les villes des clients, sans doublons, classées par ordre alphabétique.</li>
 <li><strong>Ordre SQL:</strong> <code>SELECT DISTINCT adresseCli FROM client ORDER BY adresseCli ASC;</code></li>
 <li><strong>Réponse du système:</strong><img src='exemple9.png' style='float:center;' width=100> </li>
@@ -13286,7 +13288,7 @@ div#notebook {
 <li>Les requêtes que nous avons vues jusqu'à présent concernaient à chaque fois une et une seule des quatre tables.</li>
 <li>Ainsi lorsque l'on veut les clients qui ont acheté des produits avec la commande <code>select distinct refcli from facture;</code>, on obtient la référence  des clients mais pas leur nom, ce qui semble pourtant plus naturel.</li>
 <li>L'opération de jointure de deux tables va permettre de remédier à ce problème.</li>
-<li>##### Exemple 10:<ul>
+<li><strong><em>Exemple 10:</em></strong><ul>
 <li><strong>Demande :</strong> Les clients qui ont acheté des produits.</li>
 <li><strong>Ordre SQL:</strong> <code>SELECT * FROM CLIENT JOIN FACTURE ON CLIENT.refCli=FACTURE.refCli ;</code></li>
 <li><strong>Réponse du système:</strong><img src='exemple10.png' style='float:center;' width=500> </li>
@@ -13311,7 +13313,7 @@ div#notebook {
 <ul>
 <li><p>On peut effectuer des jointures sur plus de deux tables :</p>
 <ul>
-<li><p>##### Exemple 11:</p>
+<li><p><strong><em>Exemple 11:</em></strong></p>
 <ul>
 <li><strong>Demande :</strong> Les dates d'achat des produits.</li>
 <li><strong>Ordre SQL:</strong> 
@@ -13350,7 +13352,7 @@ JOIN PRODUIT ON DETAIL.refProd=PRODUIT.refProd;</code></li>
 </li>
 </ul>
 <h3 id="Suppression-de-lignes-(DELETE-FROM...WHERE...)">Suppression de lignes (DELETE FROM...WHERE...)<a class="anchor-link" href="#Suppression-de-lignes-(DELETE-FROM...WHERE...)">&#182;</a></h3><ul>
-<li>##### Exemple 12:<ul>
+<li><strong><em>Exemple 12:</em></strong><ul>
 <li><strong>Demande :</strong> Supprimer les biscottes(produit n°3) de toutes les factures.</li>
 <li><strong>Ordre SQL:</strong> 
 <code>DELETE FROM DETAIL WHERE refProd=3;</code></li>
@@ -13367,9 +13369,9 @@ JOIN PRODUIT ON DETAIL.refProd=PRODUIT.refProd;</code></li>
 </li>
 </ul>
 <ul>
-<li><p>Les contraintes d'intégrité sont vérifiées à chaque mise à jour</p>
+<li><p>Les contraintes d'intégrité sont vérifiées à chaque mise à jour.</p>
 <ul>
-<li><p>##### Exemple 13:</p>
+<li><p><strong><em>Exemple 13:</em></strong></p>
 <ul>
 <li><strong>Demande :</strong> Supprimer le thé de la liste des produits disponibles.</li>
 <li><strong>Ordre SQL:</strong> 
@@ -13383,9 +13385,10 @@ JOIN PRODUIT ON DETAIL.refProd=PRODUIT.refProd;</code></li>
 <li>Il faut d'abord supprimer en premier les lignes ou le l'attribut <code>refProd</code> est déclaré comme clé étrangère( c'est le même principe que pour la suppresion de tables).</li>
 </ul>
 </li>
-<li><p>Un ordre de modification est soit entièrement exécuté, soit entièrement annulé.</p>
+</ul>
 <ul>
-<li>##### Exemple 14:<ul>
+<li>Un ordre de modification est soit entièrement exécuté, soit entièrement annulé.<ul>
+<li><strong><em>Exemple 14:</em></strong><ul>
 <li><strong>Demande :</strong> Supprimer les clients qui habitent Grenoble.</li>
 <li><strong>Ordre SQL:</strong> 
 <code>DELETE FROM CLIENT WHERE adresseCli='Grenoble';</code></li>
@@ -13413,7 +13416,7 @@ JOIN PRODUIT ON DETAIL.refProd=PRODUIT.refProd;</code></li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Mise-&#224;-jour-d'attributs-(UPDATE...SET...)">Mise &#224; jour d'attributs (UPDATE...SET...)<a class="anchor-link" href="#Mise-&#224;-jour-d'attributs-(UPDATE...SET...)">&#182;</a></h3><ul>
-<li><p>##### Exemple 15:</p>
+<li><p><strong><em>Exemple 15:</em></strong></p>
 <ul>
 <li><strong>Demande :</strong> Le prix du sucre a augmenté de 10% et s'appelle désormais "Sucre bio". Mettre à jour la base de données.</li>
 <li><strong>Ordre SQL:</strong> 
@@ -13423,7 +13426,7 @@ JOIN PRODUIT ON DETAIL.refProd=PRODUIT.refProd;</code></li>
 <li><strong>Réponse du système:</strong><img src='exemple13.png' style='float:center;' width=200> </li>
 </ul>
 </li>
-<li><p>#### Remarques :</p>
+<li><p><strong><em>Remarques :</em></strong></p>
 <ul>
 <li>On indique la table concernée après la clause <code>UPDATE</code>.</li>
 <li>L'affectation des nouvelles valeurs se fait après <code>SET</code>les attributs à modifier sont séparés par des virgules.</li>
@@ -13467,7 +13470,7 @@ JOIN PRODUIT ON DETAIL.refProd=PRODUIT.refProd;</code></li>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Le  résultat d'une clause <code>SELECT</code> est une table. On peut donc effectuer des requêtes sur cette nouvelle table !</p>
 <ul>
-<li>##### Exemple 16:<ul>
+<li><strong><em>Exemple 16:</em></strong><ul>
 <li><strong>Demande :</strong> Le nom du produit dont le prix unitaire est le plus cher.</li>
 <li><strong>Ordre SQL:</strong> 
 <code>SELECT nomProd,puProd from PRODUIT WHERE puProd=( SELECT MAX(puProd) from PRODUIT);</code></li>

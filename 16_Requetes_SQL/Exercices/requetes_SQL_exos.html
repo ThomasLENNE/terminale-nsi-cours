@@ -13096,69 +13096,47 @@ Si besoin, revoir le document étudié dans le chapitre "Bases de données relat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Exercice-1-:-S&#233;lection-de-donn&#233;es-dans-une-table">Exercice 1 : S&#233;lection de donn&#233;es dans une table<a class="anchor-link" href="#Exercice-1-:-S&#233;lection-de-donn&#233;es-dans-une-table">&#182;</a></h5><p>Pour chaque question, écrire l'ordre SQL permettant d'obtenir les informations demandées.</p>
-<ol>
-<li>Les noms et prénoms de tous les clients :</li>
-</ol>
+<p><strong>1.</strong> Les noms et prénoms de tous les clients :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les noms des clients habitant Grenoble : </li>
-</ol>
+<p><strong>2.</strong> Les noms des clients habitant Grenoble :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les noms et prénoms des clients n'habitant pas à Grenoble :</li>
-</ol>
+<p><strong>3.</strong> Les noms et prénoms des clients n'habitant pas à Grenoble :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les noms et les références (dans cet ordre) des produits vendus par l'entreprise. On renommera les colonnes obtenues respectivement "nom" et "reference" :</li>
-</ol>
+<p><strong>4.</strong> Les noms et les références (dans cet ordre) des produits vendus par l'entreprise. On renommera les colonnes obtenues respectivement "nom" et "reference" :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les dates où les factures ont été émises :</li>
-</ol>
+<p><strong>5.</strong> Les dates où les factures ont été émises :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les références des produits contenus dans la facture 1 :</li>
-</ol>
+<p><strong>6.</strong> Les références des produits contenus dans la facture 1 :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les noms des produits et leur prix, dont le prix unitaire est compris entre 1 et 2 euros :</li>
-</ol>
+<p><strong>7.</strong> Les noms des produits et leur prix, dont le prix unitaire est compris entre 1 et 2 euros :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Le prix unitaire moyen de ces mêmes produits( on pourra utiliser <code>AVG</code>) :</li>
-</ol>
+<p><strong>8.</strong> Le prix unitaire moyen de ces mêmes produits( on pourra utiliser <code>AVG</code>) :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Le nombre total de clients( on pourra utiliser <code>COUNT</code>) :</li>
-</ol>
+<p><strong>9.</strong> Le nombre total de clients( on pourra utiliser <code>COUNT</code>) :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>La quantité totale de biscottes qui a été vendue( on pourra utiliser <code>SUM</code>). On renommera la table obtenue "total_biscottes" :</li>
-</ol>
+<p><strong>10.</strong> La quantité totale de biscottes qui a été vendue( on pourra utiliser <code>SUM</code>). On renommera la table obtenue "total_biscottes" :</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les villes dans lesquels il y a des clients. Que remarque-t-on ?</li>
-</ol>
+<p><strong>11.</strong> Les villes dans lesquels il y a des clients. Que remarque-t-on ?</p>
 <p>*</p>
 
 </div>
@@ -13168,33 +13146,23 @@ Si besoin, revoir le document étudié dans le chapitre "Bases de données relat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Exercice-2-:-Tris-et-gestions-des-doublons">Exercice 2 : Tris et gestions des doublons<a class="anchor-link" href="#Exercice-2-:-Tris-et-gestions-des-doublons">&#182;</a></h5><p>Même consigne que précédemment</p>
-<ol>
-<li>Les reférences des produits figurant dans les factures sans doublons.</li>
-</ol>
+<p><strong>1.</strong> Les reférences des produits figurant dans les factures sans doublons.</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les produits dont le prix unitaire est supérieur à deux euros en ordre décroissant</li>
-</ol>
+<p><strong>2.</strong> Les produits dont le prix unitaire est supérieur à deux euros en ordre décroissant</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les produits dont le prix unitaire est supérieur à deux euros en ordre alphabétique.</li>
-</ol>
+<p><strong>3.</strong> Les produits dont le prix unitaire est supérieur à deux euros en ordre alphabétique.</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les références des clients qui ont acheté des produits après le 1 juin 2019 (sans doublons).</li>
-</ol>
+<p><strong>4.</strong> Les références des clients qui ont acheté des produits après le 1 juin 2019 (sans doublons).</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les quantités et les références des produits de la facture 3 par ordre croissant.</li>
-</ol>
+<p><strong>5.</strong> Les quantités et les références des produits de la facture 3 par ordre croissant.</p>
 <p>*</p>
 
 </div>
@@ -13204,45 +13172,31 @@ Si besoin, revoir le document étudié dans le chapitre "Bases de données relat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Exercice-3-:-Jointures">Exercice 3 : Jointures<a class="anchor-link" href="#Exercice-3-:-Jointures">&#182;</a></h5><p>Même consigne.</p>
-<ol>
-<li>Les détails des factures (numéro, noms des produits, quantité commandée)</li>
-</ol>
+<p><strong>1.</strong> Les détails des factures (numéro, noms des produits, quantité commandée)</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les détails de la facture 1(noms des produits, prix unitaire des produits quantité commandée)</li>
-</ol>
+<p><strong>2.</strong> Les détails de la facture 1(noms des produits, prix unitaire des produits quantité commandée)</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les noms et prénoms des clients (sans doublons) qui ont acheté des produits.</li>
-</ol>
+<p><strong>3.</strong> Les noms et prénoms des clients (sans doublons) qui ont acheté des produits.</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les noms et prénoms des clients (sans doublons) qui ont acheté des produits après le 1 juin 2019.</li>
-</ol>
+<p><strong>4.</strong> Les noms et prénoms des clients (sans doublons) qui ont acheté des produits après le 1 juin 2019.</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les noms des produits qui ont été commandés en quantité supérieure ou égale à 5.</li>
-</ol>
+<p><strong>5.</strong> Les noms des produits qui ont été commandés en quantité supérieure ou égale à 5.</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Le total de la facture 3 (on utilisera <code>SUM</code>).</li>
-</ol>
+<p><strong>6.</strong> Le total de la facture 3 (on utilisera <code>SUM</code>).</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les noms et prénoms des clients qui ont déjà commandé des biscottes.</li>
-</ol>
+<p><strong>7.</strong> Les noms et prénoms des clients qui ont déjà commandé des biscottes.</p>
 <p>*</p>
 
 </div>
@@ -13251,16 +13205,12 @@ Si besoin, revoir le document étudié dans le chapitre "Bases de données relat
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-4-:-Suppression-de-lignes.">Exercice 4 : Suppression de lignes.<a class="anchor-link" href="#Exercice-4-:-Suppression-de-lignes.">&#182;</a></h5><ol>
-<li>Supprimer la poudre petit déjeuner de la liste des produits disponibles et vérifier le résultat</li>
-</ol>
+<h5 id="Exercice-4-:-Suppression-de-lignes.">Exercice 4 : Suppression de lignes.<a class="anchor-link" href="#Exercice-4-:-Suppression-de-lignes.">&#182;</a></h5><p><strong>1.</strong> Supprimer la poudre petit déjeuner de la liste des produits disponibles et vérifier le résultat</p>
 <ul>
 <li></li>
 <li></li>
 </ul>
-<ol>
-<li>Ecrire les ordres qui permettent de supprimer Jules Banaziai de la base de données.</li>
-</ol>
+<p><strong>2.</strong> Ecrire les ordres qui permettent de supprimer Jules Banaziai de la base de données.</p>
 <ul>
 <li></li>
 <li></li>
@@ -13274,31 +13224,25 @@ Si besoin, revoir le document étudié dans le chapitre "Bases de données relat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Exercice-5-:-Mise-&#224;-jour-d'attributs.">Exercice 5 : Mise &#224; jour d'attributs.<a class="anchor-link" href="#Exercice-5-:-Mise-&#224;-jour-d'attributs.">&#182;</a></h5><p>Dans chaque question, mettre à jour les données concernées et vérifier le résultat.</p>
-<ol>
-<li>Julie Bobaino déménage à Paris.</li>
-</ol>
+<p><strong>1.</strong> Julie Bobaino déménage à Paris.</p>
 <ul>
 <li></li>
 <li></li>
 </ul>
-<ol>
-<li>La quantité de biscottes est erronée dans toutes les factures, il faut la doubler.</li>
-</ol>
+<p><strong>2.</strong> La quantité de biscottes est erronée dans toutes les factures, il faut la doubler.</p>
 <ul>
 <li></li>
 <li></li>
 </ul>
-<ol>
-<li>Les prix unitaires des biscottes  et du café ont augmenté de 15%.</li>
-</ol>
+<p><strong>3.</strong> Les prix unitaires des biscottes  et du café ont augmenté de 15%.</p>
 <ul>
 <li></li>
 <li></li>
 </ul>
-<ol>
-<li>Votre fournisseur vous indique que la référence du Thé a changé, c'est désormais $777$.</li>
-</ol>
-<p>*</p>
+<p><strong>4.</strong> Votre fournisseur vous indique que la référence du Thé a changé, c'est désormais $777$.</p>
+<ul>
+<li></li>
+</ul>
 
 </div>
 </div>
@@ -13307,16 +13251,14 @@ Si besoin, revoir le document étudié dans le chapitre "Bases de données relat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Exercice-6-:-Requ&#234;tes-imbriqu&#233;es">Exercice 6 : Requ&#234;tes imbriqu&#233;es<a class="anchor-link" href="#Exercice-6-:-Requ&#234;tes-imbriqu&#233;es">&#182;</a></h5><p>Pour chaque question, écrire l'ordre SQL permettant d'obtenir les informations demandées.</p>
-<ol>
-<li>Les noms et prénoms des personnes habitant la même ville que Jules Banaziai.</li>
-</ol>
+<p><strong>1.</strong> Les noms et prénoms des personnes habitant la même ville que Jules Banaziai.</p>
 <ul>
 <li></li>
 </ul>
-<ol>
-<li>Les noms et prix unitaires des produits dont le prix unitaire est supérieur au prix unitaire moyen de tous les produits.</li>
-</ol>
-<p>*</p>
+<p><strong>2.</strong> Les noms et prix unitaires des produits dont le prix unitaire est supérieur au prix unitaire moyen de tous les produits.</p>
+<ul>
+<li></li>
+</ul>
 
 </div>
 </div>
@@ -13339,12 +13281,10 @@ Ref Nom          Qte  PU   Total
                            -----
 
                            22.60</code></pre>
-<ol>
-<li>Insérer les informations nécéssaires à l'édition de cette facture.</li>
-<li>Ecrire une requête permettant d'obtenir <em>exactement</em> l'affichage ci-dessous :
-<img src='ex7-3.png' style='float:center;' width=300></li>
-<li>Ecrire une requête qui permet de calculer le montant de cette facture.</li>
-</ol>
+<p><strong>1.</strong> Insérer les informations nécéssaires à l'édition de cette facture.</p>
+<p><strong>2.</strong> Ecrire une requête permettant d'obtenir <em>exactement</em> l'affichage ci-dessous :</p>
+<p><img src='ex7-3.png' style='float:center;' width=300></p>
+<p><strong>3.</strong> Ecrire une requête qui permet de calculer le montant de cette facture.</p>
 
 </div>
 </div>
@@ -13353,19 +13293,21 @@ Ref Nom          Qte  PU   Total
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Réponses</strong>:</p>
-<ol>
-<li>insertions :<ul>
+<p><strong>1.</strong> insertions :</p>
+<ul>
 <li></li>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-</li>
-</ol>
-<ol>
+<p><strong>2.</strong></p>
+<ul>
 <li></li>
-</ol>
-<p>3.</p>
+</ul>
+<p><strong>3.</strong></p>
+<ul>
+<li></li>
+</ul>
 
 </div>
 </div>
