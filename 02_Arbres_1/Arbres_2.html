@@ -13086,12 +13086,13 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="1.-Des-arbres-avec-python">1. Des arbres avec python<a class="anchor-link" href="#1.-Des-arbres-avec-python">&#182;</a></h2><h5 id="Exemple">Exemple<a class="anchor-link" href="#Exemple">&#182;</a></h5><p>Voici un exemple de code permettant de construire l'arbre $a1$ ci-contre:</p>
 <p><img src=a1.png style='float:right;' width=200></p>
-<p><code>a1 = Arbre(1)
+
+<pre><code>a1 = Arbre(1)
 b = Arbre(2)
 c = Arbre(3)
 d = Arbre(4)
 a1.ajoute(b, c)
-b.ajoute(d, Arbre(5))</code></p>
+b.ajoute(d, Arbre(5))</code></pre>
 
 </div>
 </div>
@@ -13099,14 +13100,13 @@ b.ajoute(d, Arbre(5))</code></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Exercice-1-:-Construction-d'arbres">Exercice 1 : Construction d'arbres<a class="anchor-link" href="#Exercice-1-:-Construction-d'arbres">&#182;</a></h4><ol>
-<li>Dessiner l'arbre $a2$ construit par le code suivant :</li>
-</ol>
+<h4 id="Exercice-1-:-Construction-d'arbres">Exercice 1 : Construction d'arbres<a class="anchor-link" href="#Exercice-1-:-Construction-d'arbres">&#182;</a></h4><p><strong>1.</strong> Dessiner l'arbre $a2$ construit par le code suivant :</p>
+
+<pre><code>a2=Arbre(0)
+a2.ajoute(Arbre(5),a1)</code></pre>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><code>a2=Arbre(0)
-a2.ajoute(Arbre(5),a1)</code></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -13117,10 +13117,8 @@ a2.ajoute(Arbre(5),a1)</code></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Donner le code permettant de dessiner l'arbre ci-contre
-<img src=a3.png style='float:right;' width=300></li>
-</ol>
+<p><strong>2.</strong> Donner le code permettant de dessiner l'arbre ci-contre
+<img src=a3.png style='float:right;' width=300></p>
 
 </div>
 </div>
@@ -13128,15 +13126,14 @@ a2.ajoute(Arbre(5),a1)</code></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Dessiner l'arbre $a4$ construit par le code suivant, sachant que <code>a4.enfants</code> est la liste des enfants de <code>a4</code>.</li>
-</ol>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p><code>a4 = Arbre(1)
+<p><strong>3.</strong> Dessiner l'arbre $a4$ construit par le code suivant, sachant que <code>a4.enfants</code> est la liste des enfants de <code>a4</code>.</p>
+
+<pre><code>a4 = Arbre(1)
 a4.ajoute(Arbre('A'), Arbre('B'), Arbre('C'))
 for i in range (3):
-    a4.enfants[i].ajoute(Arbre(3*i), Arbre(i+5))</code></p>
+    a4.enfants[i].ajoute(Arbre(3*i), Arbre(i+5))</code></pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
@@ -13146,10 +13143,9 @@ for i in range (3):
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-2-:">Exercice 2 :<a class="anchor-link" href="#Exercice-2-:">&#182;</a></h5><ol>
-<li>Représenter les arbres $A$,$B$ et $D$ construits par le code ci-dessous:</li>
-</ol>
-<p><code>A = Arbre('A')
+<h5 id="Exercice-2-:">Exercice 2 :<a class="anchor-link" href="#Exercice-2-:">&#182;</a></h5><p><strong>1.</strong> Représenter les arbres $A$,$B$ et $D$ construits par le code ci-dessous:</p>
+
+<pre><code>A = Arbre('A')
 B = Arbre('B')
 C = Arbre('C')
 D = Arbre('D')
@@ -13160,7 +13156,7 @@ H = Arbre('H')
 B.ajoute(E, F)
 D.ajoute(G)
 A.ajoute(B, C, H)
-G.ajoute(H)</code></p>
+G.ajoute(H)</code></pre>
 
 </div>
 </div>
@@ -13168,9 +13164,7 @@ G.ajoute(H)</code></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Représenter l'arbre $A$ après l'instruction <code>A.enfants[2] = D</code></li>
-</ol>
+<p><strong>2.</strong> Représenter l'arbre $A$ après l'instruction <code>A.enfants[2] = D</code></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -13191,25 +13185,15 @@ G.ajoute(H)</code></p>
 </ul>
 <p><img src='A.png' style='float:right;' width=300></p>
 <p>&nbsp;</p>
-<ol>
-<li>Quels sont le type et la valeur de <code>A.label</code> ? </li>
-</ol>
+<p><strong>1.</strong> Quels sont le type et la valeur de <code>A.label</code> ?</p>
 <p>&nbsp;</p>
-<ol>
-<li>Quels sont le type et la valeur de <code>A.enfants</code> ?</li>
-</ol>
+<p><strong>2.</strong> Quels sont le type et la valeur de <code>A.enfants</code> ?</p>
 <p>&nbsp;</p>
-<ol>
-<li>Quels sont le type et la valeur de <code>A.enfants[0]</code> ?</li>
-</ol>
+<p><strong>3.</strong> Quels sont le type et la valeur de <code>A.enfants[0]</code> ?</p>
 <p>&nbsp;</p>
-<ol>
-<li>Quels sont le type et la valeur de <code>B.enfants[0].label</code> ?</li>
-</ol>
+<p><strong>4.</strong> Quels sont le type et la valeur de <code>B.enfants[0].label</code> ?</p>
 <p>&nbsp;</p>
-<ol>
-<li>Quels sont le type et la valeur de <code>A.enfants[0].enfants[1].label</code> ?</li>
-</ol>
+<p><strong>5.</strong> Quels sont le type et la valeur de <code>A.enfants[0].enfants[1].label</code> ?</p>
 <p>&nbsp;</p>
 
 </div>
@@ -13228,9 +13212,7 @@ G.ajoute(H)</code></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Exercice-4:">Exercice 4:<a class="anchor-link" href="#Exercice-4:">&#182;</a></h4><p>Dans cet exercice, on considère les arbres <code>a0</code> , <code>a1</code>, <code>a5</code> et <code>a6</code> respectivement affichés ci-dessous:
 <img src='ex4.png' align='center' width=100%></p>
-<ol>
-<li>Compléter le tableau ci-dessous :</li>
-</ol>
+<p><strong>1.</strong> Compléter le tableau ci-dessous :</p>
 <table>
 <thead><tr>
 <th></th>
@@ -13278,27 +13260,26 @@ G.ajoute(H)</code></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Voici une première fonction qui prend un arbre en paramètre :</li>
-</ol>
-<p><code>def est_une_feuille(arbre):
+<p><strong>2.</strong> Voici une première fonction qui prend un arbre en paramètre :</p>
+
+<pre><code>def est_une_feuille(arbre):
     if arbre.enfants==[]:
         return True
     else:
-        return False</code></p>
+        return False</code></pre>
 <ul>
 <li>Est-ce une fonction récursive ?  </li>
 </ul>
 <ul>
 <li><p>Quelles sont les valeurs de <code>f1</code>, <code>f2</code> , <code>f3</code> et <code>f4</code> suivantes ?</p>
 <ul>
-<li><p><code>f1=est_une_feuille(a0)</code> :</p>
+<li><p><code>f1 = est_une_feuille(a0)</code> :</p>
 </li>
-<li><p><code>f2=est_une_feuille(a1)</code> :</p>
+<li><p><code>f2 = est_une_feuille(a1)</code> :</p>
 </li>
-<li><p><code>f3=est_une_feuille(a1.enfants[0])</code> :</p>
+<li><p><code>f3 = est_une_feuille(a1.enfants[0])</code> :</p>
 </li>
-<li><p><code>f4=est_une_feuille(a1.enfants[1])</code> :</p>
+<li><p><code>f4 = est_une_feuille(a1.enfants[1])</code> :</p>
 </li>
 </ul>
 </li>
@@ -13310,17 +13291,16 @@ G.ajoute(H)</code></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Voici une autre fonction qui prend également un arbre en paramètre :</li>
-</ol>
-<p><code>def mystere(arbre):
+<p><strong>3.</strong> Voici une autre fonction qui prend également un arbre en paramètre :</p>
+
+<pre><code>def mystere(arbre):
     if est_une_feuille(arbre):
         total=1
     else:
         total=0
         for sous_arbre in arbres.enfants:
             total=total+mystere(sous_arbre)
-    return total</code></p>
+    return total</code></pre>
 <ul>
 <li>Est-ce une fonction récursive ?   </li>
 </ul>
@@ -13348,16 +13328,13 @@ G.ajoute(H)</code></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li><p>On veut écrire une fonction <code>somme(arbre)</code> qui prend en paramètre un arbre et qui renvoie la somme des étiquettes de tous les noeuds de l'arbre.</p>
+<p><strong>4.</strong> On veut écrire une fonction <code>somme(arbre)</code> qui prend en paramètre un arbre et qui renvoie la somme des étiquettes de tous les noeuds de l'arbre.</p>
 <ul>
 <li><p>Quelles seront les valeurs de <code>somme(a0)</code> et <code>somme(a1)</code> ? :</p>
 </li>
 <li><p>Proposer un code pour cette fonction :</p>
 </li>
 </ul>
-</li>
-</ol>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -13374,10 +13351,8 @@ G.ajoute(H)</code></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Ecrire le code d'une fonction <code>e_max(arbre)</code> qui prend en parametre un arbre et qui renvoie la valeur de l'étiquette la plus grande.
-&nbsp;</li>
-</ol>
+<p><strong>5.</strong> Ecrire le code d'une fonction <code>e_max(arbre)</code> qui prend en parametre un arbre et qui renvoie la valeur de l'étiquette la plus grande.
+&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
