@@ -13087,9 +13087,7 @@ div#notebook {
 <h3 id="Exercice-1-:-Le-code-c&#233;sar">Exercice 1 : Le code c&#233;sar<a class="anchor-link" href="#Exercice-1-:-Le-code-c&#233;sar">&#182;</a></h3><ul>
 <li>Le chiffrement par décalage (appelé aussi codage de César, en référence à Jules César qui utilisait cette technique pour ses correspondances militaires) consiste à choisir un entier 𝑛 et à décaler chaque lettre du message initial de 𝑛 lettres dans l'alphabet (en recommançant à "A" si le décalage fait dépasser "Z"). C'est l'entier 𝑛 qui constitue la clé de chiffrement. La méthode de déchiffrment revient à décaler les lettres du message chiffré de 𝑛 positions dans l'autre sens.</li>
 </ul>
-<ol>
-<li>Compléter la fonction <code>cesar(message,n)</code> qui prend en paramètres une chaîne de caractère et un entier $n$. Cette fonction renvoie la chaîne de caractères chiffrée avec un décalage de $n$ lettres "vers la droite".</li>
-</ol>
+<p><strong>1.</strong> Compléter la fonction <code>cesar(message,n)</code> qui prend en paramètres une chaîne de caractère et un entier $n$. Cette fonction renvoie la chaîne de caractères chiffrée avec un décalage de $n$ lettres "vers la droite".</p>
 
 </div>
 </div>
@@ -13124,9 +13122,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>En utilisant judicieusement la fonction précédente, décoder ce message : <code>'zsg uoizcwg bs gcbh dog awsil'</code></li>
-</ol>
+<p><strong>2.</strong> En utilisant judicieusement la fonction précédente, décoder ce message : <code>'zsg uoizcwg bs gcbh dog awsil'</code></p>
 
 </div>
 </div>
@@ -13160,9 +13156,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>On souhaite chiffrer chaque caractère du message avec la clé $8400$. En utilisant les fonctions <code>ord()</code> et <code>car()</code>, écrire l'instruction qui permet de chiffrer <code>'e'</code>.</li>
-</ol>
+<p><strong>1.</strong> On souhaite chiffrer chaque caractère du message avec la clé $8400$. En utilisant les fonctions <code>ord()</code> et <code>car()</code>, écrire l'instruction qui permet de chiffrer <code>'e'</code>.</p>
 
 </div>
 </div>
@@ -13183,9 +13177,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Compléter la fonction <code>cesar_2(message,n)</code>qui prend en paramètres une chaîne de caractère et un entier $n$. Cette fonction renvoie la chaîne de caractères chiffrée avec un décalage de $n$ "vers la droite".</li>
-</ol>
+<p><strong>2.</strong> Compléter la fonction <code>cesar_2(message,n)</code>qui prend en paramètres une chaîne de caractère et un entier $n$. Cette fonction renvoie la chaîne de caractères chiffrée avec un décalage de $n$ "vers la droite".</p>
 
 </div>
 </div>
@@ -13227,10 +13219,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Décoder le message suivant : <code>'ØúµĆĊúµĉĊµþüăĄćúĈµċöĊĉµąöćûĄþĈµĂþúĊčµĆĊúµøúµĆĊúµĉĊµĈöþĈÃ'</code>.
-<em>Indice : On sait que la clé est inférieure à 165</em></li>
-</ol>
+<p><strong>3.</strong> Décoder le message suivant : <code>'ØúµĆĊúµĉĊµþüăĄćúĈµċöĊĉµąöćûĄþĈµĂþúĊčµĆĊúµøúµĆĊúµĉĊµĈöþĈÃ'</code>.
+<em>Indice : On sait que la clé est inférieure à 165</em></p>
 
 </div>
 </div>
@@ -13254,23 +13244,10 @@ div#notebook {
 <h3 id="Exercice-3-:-XOR">Exercice 3 : XOR<a class="anchor-link" href="#Exercice-3-:-XOR">&#182;</a></h3><p>Le but de cet exercice est de chiffrer un message à l'aide de l'opérateur XOR (voir cours). L'un des intérêts de cet opérateur est qu'il est réversible.
 En python, cette opération est possible avec le symbole <code>^</code> qui applique cet opérateur bit à bit.</p>
 <p><em>Exemple : <code>78^84</code> renvoie <code>26</code> (ce qui correspond en binaire à  01010100  ⊕  01001110 = 00011010)</em></p>
-<p><strong>1. Vérifier que cet opérateur est réversible.</strong></p>
+<p><strong>1.</strong> Vérifier que cet opérateur est réversible.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13288,10 +13265,8 @@ En python, cette opération est possible avec le symbole <code>^</code> qui appl
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Une chaîne de caractères Unicode est une séquence de points de code, qui sont des nombres de 0 à 0x10FFFF (1 114 111 en décimal). Cette séquence de points de code doit être stockée en mémoire sous la forme d'un ensemble de unités de code, et les unités de code sont ensuite transposées en octets de 8 bits. Les règles de traduction d'une chaîne Unicode en une séquence d'octets sont appelées un encodage de caractères ou simplement un encodage.
-Python permet de travailler avec ces séquences d'octets grâce aux méthodes <code>encode()</code>,<code>decode()</code> et <code>bytes()</code></li>
-</ol>
+<p><strong>2.</strong> Une chaîne de caractères Unicode est une séquence de points de code, qui sont des nombres de 0 à 0x10FFFF (1 114 111 en décimal). Cette séquence de points de code doit être stockée en mémoire sous la forme d'un ensemble de unités de code, et les unités de code sont ensuite transposées en octets de 8 bits. Les règles de traduction d'une chaîne Unicode en une séquence d'octets sont appelées un encodage de caractères ou simplement un encodage.
+Python permet de travailler avec ces séquences d'octets grâce aux méthodes <code>encode()</code>,<code>decode()</code> et <code>bytes()</code></p>
 <p><em>Exemple 1 :</em></p>
 
 </div>
@@ -13528,9 +13503,7 @@ Python permet de travailler avec ces séquences d'octets grâce aux méthodes <c
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Quelle instruction, utilisant la fonction <code>xor</code> de la question précédente, permet de retrouver le message de départ ?</li>
-</ol>
+<p><strong>3.</strong> Quelle instruction, utilisant la fonction <code>xor</code> de la question précédente, permet de retrouver le message de départ ?</p>
 
 </div>
 </div>
@@ -13564,11 +13537,25 @@ Python permet de travailler avec ces séquences d'octets grâce aux méthodes <c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">secret</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x0e</span><span class="s1">6/+y;.&lt; x-(7,,</span><span class="se">\x9b\xf0</span><span class="s1">z48z:646&lt;z*</span><span class="se">\x9a\xf3</span><span class="s1">(64+&lt;{&#39;</span>
 <span class="n">a</span><span class="o">=</span><span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="c1">#</span>
 </pre></div>
 
     </div>
@@ -13594,6 +13581,25 @@ Le message secret est</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">secret</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">!A.</span><span class="se">\x14</span><span class="s1">m=-A)</span><span class="se">\x00</span><span class="s1">$ h</span><span class="se">\x11</span><span class="s1">;</span><span class="se">\x12</span><span class="s1">m&lt;</span><span class="se">\x8b\xd8</span><span class="s1">z</span><span class="se">\x15</span><span class="s1">8s&gt;</span><span class="se">\x00</span><span class="s1">)Mm!-</span><span class="se">\x15</span><span class="s1">5</span><span class="se">\x14</span><span class="s1">?=-A&gt;F&quot;</span><span class="se">\x90\xf1</span><span class="s1">A.</span><span class="se">\x14</span><span class="s1">m%!</span><span class="se">\x04</span><span class="s1">4</span><span class="se">\x12</span><span class="s1">c&#39;</span>
 <span class="n">Aa</span><span class="o">=</span><span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&#39;</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="c1">#</span>
 </pre></div>
 
     </div>
