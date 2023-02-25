@@ -13121,7 +13121,7 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">N</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="mi">16</span>
 <span class="n">T</span><span class="o">=</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">**</span><span class="mi">16</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">T</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">T</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1">#tri du tableau</span>
 </pre></div>
 
     </div>
@@ -13276,18 +13276,65 @@ Indice de  41325  :
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-1-:">Exercice 1 :<a class="anchor-link" href="#Exercice-1-:">&#182;</a></h5><p>Compléter la fonction <code>dichotomie_DQ(v,T,g,d)</code> comme décrite ci-dessus.</p>
+<h5 id="Exercice-1">Exercice 1<a class="anchor-link" href="#Exercice-1">&#182;</a></h5><p>On considère le tableau <code>T=[1,1,2,3,5,8,13,21]</code>.Ecrire la séquence des appels de la fonction précédente lors de l'éxécution de :</p>
+<p><strong>1.</strong> <code>dichotomie_DQ(13, T , 0, 7)</code>
+<strong>2.</strong> <code>dichotomie_DQ(12, T , 0, 7)</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Réponse:</strong></p>
+<p><strong>1.</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p><strong>2.</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Exercice-2-:">Exercice 2 :<a class="anchor-link" href="#Exercice-2-:">&#182;</a></h5><p>Compléter la fonction <code>dichotomie_DQ(v,T,g,d)</code> comme décrite précédemment.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dichotomie_DQ</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
-    <span class="k">pass</span>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+<span class="c1">#</span>
 </pre></div>
 
     </div>
@@ -13323,41 +13370,6 @@ Indice de  41325  :
 <li>La stratégie "diviser pour régner" s'exprime ici par le fait que la taille de l'intervalle de recherche est divisée par deux à chaque étape. On se ramène à la résolution d'un problème plus petit.</li>
 <li>Pour un tableau de $2^{16}=65536$ éléments, il ne faut au maximum que 16 étapes pour trouver la valeur. Cet algorithme est de complexité logarithmique.</li>
 <li>Cet algorithme n'indique pas si une valeur se trouve plusieurs fois dans le tableau. Dès qu'il trouve un indice avec la valeur recherchée, il le renvoie.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-2">Exercice 2<a class="anchor-link" href="#Exercice-2">&#182;</a></h5><p>On considère le tableau <code>T=[1,1,2,3,5,8,13,21]</code>.Ecrire la séquence des appels de la fonction précédente lors de l'éxécution de :</p>
-<ol>
-<li><code>dichotomie_DQ(13, T , 0, 7)</code></li>
-<li><code>dichotomie_DQ(12, T , 0, 7)</code></li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Réponse:</strong></p>
-<ol>
-<li></li>
-<li></li>
-</ol>
-<ul>
-<li></li>
-<li></li>
-</ul>
-<p>2.</p>
-<ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
 </ul>
 
 </div>
@@ -13532,7 +13544,7 @@ Indice de  41325  :
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>59 | 7 | 30 | 30 | 26 | 75 | 44 | 68
+<pre>87 | 50 | 83 | 91 | 56 | 3 | 99 | 2
 </pre>
 </div>
 </div>
@@ -13556,7 +13568,7 @@ Indice de  41325  :
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">couper</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
@@ -13580,24 +13592,42 @@ Indice de  41325  :
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Exercice-4:">Exercice 4:<a class="anchor-link" href="#Exercice-4:">&#182;</a></h5><p>On suppose que la liste <code>lst</code> à trier est <code>77 | 76 | 25 | 8 | 1 | 6 | 44 | 76 | 69</code> .</p>
-<ol>
-<li>Ecrire un code qui permet de construire cette liste.</li>
-</ol>
+<p><strong>1.</strong> Ecrire un code qui permet de construire cette liste.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1.</span>
-<span class="n">c1</span><span class="o">=</span><span class="n">Cell</span><span class="p">(</span><span class="mi">77</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
 
 
-<span class="n">lst</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="c1">#</span>
 </pre></div>
 
     </div>
@@ -13614,7 +13644,8 @@ Indice de  41325  :
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>77
+<pre>77 | 76 | 25 | 8 | 1 | 6 | 44 | 76 | 69
+77 | 76 | 25 | 8 | 1 | 6 | 44 | 76 | 69
 </pre>
 </div>
 </div>
@@ -13626,13 +13657,21 @@ Indice de  41325  :
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Quelles valeurs contiendront les listes coupées <code>l1</code> et <code>l2</code> après l'appel de la fonction <code>couper(lst)</code> ?</li>
-</ol>
+<p><strong>2.</strong> En détaillant les étapes, déterminer les valeurs que contiendront les listes coupées <code>l1</code> et <code>l2</code> après l'appel de la fonction <code>couper(lst)</code> ?</p>
 <p><strong>Réponses :</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <ul>
-<li><code>l1</code>:  </li>
-<li><code>l2</code>:  </li>
+<li><code>l1</code>: </li>
+<li><code>l2</code>: </li>
 </ul>
 
 </div>
@@ -13641,20 +13680,20 @@ Indice de  41325  :
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Vérifier votre réponse ci-dessous.</li>
-</ol>
+<p><strong>3.</strong> Vérifier votre réponse ci-dessous.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3.</span>
- 
+<span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="o">=</span><span class="n">couper</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13718,10 +13757,23 @@ Ecrire un jeu de test qui permet de s'assurer que cette fonction fait bien ce qu
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Réponses</span>
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="c1">#</span>
 </pre></div>
 
     </div>
@@ -13739,11 +13791,23 @@ Ecrire un jeu de test qui permet de s'assurer que cette fonction fait bien ce qu
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">tri_fusion</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
-    <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">lst</span><span class="o">.</span><span class="n">tete</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">lst</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suivant</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">...</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># on coupe la liste en deux sous listes l1 etl2</span>
+        
+        
+        
+        <span class="c1"># on trie l1 et l2 par fusion</span>
+        
+        
+        
+        
+        <span class="k">return</span> <span class="o">...</span>                   <span class="c1"># on fusionne l1 et l2</span>
 </pre></div>
 
     </div>
@@ -13753,7 +13817,7 @@ Ecrire un jeu de test qui permet de s'assurer que cette fonction fait bien ce qu
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lst</span><span class="o">=</span><span class="n">lst_random</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">99</span><span class="p">)</span>
@@ -13775,8 +13839,8 @@ Ecrire un jeu de test qui permet de s'assurer que cette fonction fait bien ce qu
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>17 | 13 | 96 | 48 | 15 | 49 | 84 | 86 | 17 | 28 | 68 | 76 | 27 | 3 | 7
-None
+<pre>23 | 18 | 10 | 73 | 34 | 4 | 35 | 69 | 5 | 77 | 61 | 7 | 55 | 24 | 29
+4 | 5 | 7 | 10 | 18 | 23 | 24 | 29 | 34 | 35 | 55 | 61 | 69 | 73 | 77
 </pre>
 </div>
 </div>
@@ -13810,6 +13874,9 @@ Déterminer un algorithme qui permet de trouver rapidement la vraie pièce en or
 <li></li>
 <li></li>
 <li></li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 
 </div>
@@ -13818,21 +13885,41 @@ Déterminer un algorithme qui permet de trouver rapidement la vraie pièce en or
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Exercice-9-:">Exercice 9 :<a class="anchor-link" href="#Exercice-9-:">&#182;</a></h5><p>Réécrire la fonction <code>fusionner(l1,l2)</code> à l'aide d'une boucle <code>while</code>.
-Aide : On pourra utiliser la méthode <code>ajoute(self,nouvelle)</code> disponible dans la classe <code>Lc()</code></p>
+<h5 id="Exercice-9-:">Exercice 9 :<a class="anchor-link" href="#Exercice-9-:">&#182;</a></h5><p>La fonction <code>fusionner(l1,l2)</code> a été réécrite à l'aide d'une boucle <code>while</code>.La compléter.</p>
+<p>Aide : On pourra utiliser la méthode <code>ajoute(self,nouvelle)</code> disponible dans la classe <code>Lc()</code></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fusionner</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Fusionne deux listes triées</span>
-<span class="sd">    en une seule&#39;&#39;&#39;</span>
-    <span class="k">pass</span>
+    <span class="sd">&#39;&#39;&#39;Renvoie une liste qui contient</span>
+<span class="sd">    la fusion des deux listes l1 et l2</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">lst</span><span class="o">=...</span>
+    
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">l1</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span> <span class="ow">and</span> <span class="o">...</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">l1</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">valeur</span> <span class="o">&lt;=</span> <span class="n">l2</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">valeur</span><span class="p">:</span>
+            <span class="o">...</span>
+            <span class="n">l1</span><span class="o">.</span><span class="n">tete</span><span class="o">=</span><span class="n">l1</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suivant</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="o">...</span>
+            <span class="n">l2</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">l2</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suivant</span><span class="p">)</span>
+    
+    <span class="c1">#A partir de ces lignes,les 2 listes ne sont pas nécéssairement vides</span>
+    <span class="k">if</span> <span class="n">l1</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">l2</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="k">return</span> <span class="o">...</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="o">...</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="o">...</span> 
+    
+    <span class="k">return</span> <span class="o">...</span>
 </pre></div>
 
     </div>
@@ -13842,7 +13929,7 @@ Aide : On pourra utiliser la méthode <code>ajoute(self,nouvelle)</code> disponi
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Tests fusionner</span>
@@ -13874,9 +13961,9 @@ Aide : On pourra utiliser la méthode <code>ajoute(self,nouvelle)</code> disponi
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>None
-None
-None
+<pre>1 | 2 | 3 | 4 | 5 | 6 | 7
+2 | 3 | 5
+1 | 4 | 6 | 7
 </pre>
 </div>
 </div>
@@ -13889,36 +13976,45 @@ None
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Exercice-10-:-Les-tours-de-Hanoi(-voir-l'exercice-13-du-chapitre-sur-la-r&#233;cursivit&#233;)">Exercice 10 : Les tours de Hanoi( voir l'exercice 13 du chapitre sur la r&#233;cursivit&#233;)<a class="anchor-link" href="#Exercice-10-:-Les-tours-de-Hanoi(-voir-l'exercice-13-du-chapitre-sur-la-r&#233;cursivit&#233;)">&#182;</a></h5><p><img src='hanoi.png' style='float:center;' width=400></p>
-<p>Ecrire une fonction <code>hanoi(n)</code> qui affiche la solution du problème des tours des Hanoi pour <code>n</code> disques , sous la forme de déplacements élémentaires désignant les trois tiges par les entiers $1$,$2$ et $3$ de la manière suivante :</p>
+<center> Pour tester le jeu : <a href=http://championmath.free.fr/tourhanoi.htm>http://championmath.free.fr/tourhanoi.htm</a> </center><p>Ecrire la fonction <code>hanoi(a,b,c,n)</code> qui affiche la solution du problème des tours des Hanoi pour <code>n</code> disques , sous la forme de déplacements élémentaires désignant les trois tiges par les lettres $A$,$B$ et $C$ de la manière suivante :</p>
 <ul>
-<li><code>1 vers 3</code></li>
-<li><code>1 vers 2</code></li>
+<li><code>A vers C</code></li>
+<li><code>A vers B</code></li>
 <li>...</li>
 </ul>
-<p><em>Rappel : Pour transférer $n$ disques</em>
+<p>Plus précisément, cette fonction déplace les $n$ disques de la tige $a$ vers la tige $c$ en passant par la tige $b$.</p>
+<p><em>Rappel : Pour transférer $n$ disques de A vers C en passant par B :</em>
 <img src='hanoi_sol.png' style='float:right;' width=400></p>
 <ul>
-<li>On transfère $n-1$ disques sur le deuxième axe (1), </li>
-<li>Puis on transfère le plus gros disque sur le troisième axe (2) ,</li>
-<li>Et enfin les $n-1$ disques sur le troisième axe(3).</li>
+<li>On transfère $n-1$ disques sur l'axe $B$ (1), </li>
+<li>Puis on transfère le plus gros disque sur le troisième axe  $C$ (2) ,</li>
+<li>Et enfin les $n-1$ disques sur le troisième axe, c'est à dire de $B$ vers $C$ (3).</li>
 </ul>
-<p><em>Aide :</em></p>
-<ul>
-<li>On pourra commencer par écrire la fonction récursive <code>deplace(a,b,c,k)</code> qui déplace $k$ disques de la tige $a$ vers la tige $b$ en se servant de la tige $c$ comme stockage intermédiaire.</li>
-</ul>
+<p>On pourra vérifier l'exactitude de l'affichage à l'aide du jeu.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">deplace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
-    <span class="k">pass</span>
-<span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">pass</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;deplace n disques de a vers c</span>
+<span class="sd">    en utilisant b comme intermédiaire&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="c1">#si n=0, on sort de la fonction</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        <span class="k">pass</span>
 </pre></div>
 
     </div>
@@ -13928,11 +14024,11 @@ None
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Tests</span>
-<span class="n">hanoi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">hanoi</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 3 disques à déplacer</span>
 </pre></div>
 
     </div>
@@ -13949,13 +14045,13 @@ None
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1 vers 3
-1 vers 2
-3 vers 2
-1 vers 3
-2 vers 1
-2 vers 3
-1 vers 3
+<pre>A vers C
+A vers B
+C vers B
+A vers C
+B vers A
+B vers C
+A vers C
 </pre>
 </div>
 </div>
